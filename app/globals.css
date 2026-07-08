@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------
+ * Suraksha24 design tokens.
+ * Palette + fonts are intentionally muted and fixed — see README for the
+ * rationale. Edit here (not per-component) to keep the site consistent.
+ * ------------------------------------------------------------------- */
+@theme inline {
+  --color-cream: #f5f1e8;
+  --color-surface: #ffffff;
+  --color-surface-alt: #fbf8f1;
+  --color-forest: #2c3e2e;
+  --color-forest-light: #3d5240;
+  --color-sage: #9db18e;
+  --color-sage-light: #c3d1b8;
+  --color-gold: #b8934a;
+  --color-muted: #4a4a42;
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+
+  --shadow-soft: 0 2px 8px rgba(44, 62, 46, 0.06), 0 12px 32px rgba(44, 62, 46, 0.08);
+  --shadow-soft-lg: 0 8px 24px rgba(44, 62, 46, 0.08), 0 24px 56px rgba(44, 62, 46, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-forest);
+  font-family: var(--font-sans);
+}
+
+/* Utility for the soft, expensive-feeling elevation used across cards. */
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+.shadow-soft-lg {
+  box-shadow: var(--shadow-soft-lg);
+}
+
+/* Letter-spaced uppercase eyebrow label used above headings. */
+.eyebrow {
+  font-family: var(--font-sans);
+  color: var(--color-gold);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Subtle scroll-in fade used by <FadeIn>. Respects reduced-motion. */
+[data-fade] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-fade="in"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gentle, slow "breathe" ring used to draw a little attention to the
+   floating chat trigger without feeling like a notification badge. */
+@keyframes gentle-pulse-ring {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(184, 147, 74, 0.32);
+  }
+  50% {
+    box-shadow: 0 0 0 9px rgba(184, 147, 74, 0);
+  }
+}
+.animate-gentle-pulse {
+  animation: gentle-pulse-ring 3.2s ease-in-out infinite;
+}
+
+/* Content swap transition + auto-advance progress fill used by the
+   interactive "How it works" stepper. */
+@keyframes step-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-step-fade {
+  animation: step-fade-in 0.45s ease-out;
+}
+
+@keyframes step-progress-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.animate-step-progress {
+  animation: step-progress-fill linear forwards;
+}
+
+/* Slow, ambient zoom for blog post cover photos — gives a static hero image
+   a little life without needing a hover trigger. */
+@keyframes ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+.animate-ken-burns {
+  animation: ken-burns 16s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  [data-fade] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-gentle-pulse {
+    animation: none;
+  }
+  .animate-step-fade {
+    animation: none;
+  }
+  .animate-step-progress {
+    animation: none;
+    width: 100%;
+  }
+  .animate-ken-burns {
+    animation: none;
+  }
+}
+
+/* Consistent, visible focus ring for keyboard users (WCAG AA). */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
