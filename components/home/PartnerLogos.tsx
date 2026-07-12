@@ -13,11 +13,20 @@ function LogoChip({ entry }: { entry: PartnerLogoEntry }) {
     <li className="mx-3 flex h-20 w-52 flex-shrink-0 items-center justify-center rounded-2xl border border-forest/8 bg-surface px-6 shadow-soft">
       {hasLogo ? (
         <div className="relative h-10 w-full">
-          <Image src={entry.logo} alt={entry.name} fill sizes="200px" className="object-contain" />
+          <Image
+            src={entry.logo}
+            alt={entry.name}
+            fill
+            sizes="200px"
+            className="object-contain"
+          />
         </div>
       ) : (
         <span className="flex items-center gap-2 text-center text-sm font-medium text-forest/70">
-          <Building2 className="h-4 w-4 flex-shrink-0 text-gold" aria-hidden="true" />
+          <Building2
+            className="h-4 w-4 flex-shrink-0 text-gold"
+            aria-hidden="true"
+          />
           {entry.name}
         </span>
       )}
@@ -31,13 +40,15 @@ function LogoChip({ entry }: { entry: PartnerLogoEntry }) {
  * the loop is seamless — pauses entirely under prefers-reduced-motion.
  */
 export default function PartnerLogos() {
-  const hasAnyRealLogo = partnerLogos.some((entry) => publicFileExists(entry.logo));
+  const hasAnyRealLogo = partnerLogos.some((entry) =>
+    publicFileExists(entry.logo),
+  );
   const track = [...partnerLogos, ...partnerLogos];
 
   return (
     <Section
       tone="cream"
-      eyebrow="Our network"
+      eyebrow="Our partners"
       heading="Hospitals and organizations we work alongside"
       subheading="Referral partners across Kolkata trust Suraksha24 to carry care through — from discharge to full recovery."
     >
@@ -53,7 +64,8 @@ export default function PartnerLogos() {
 
       {!hasAnyRealLogo && (
         <p className="mt-2 text-center text-xs text-muted/70">
-          *Illustrative partner network, shown as a placeholder — to be updated with real logos.
+          *Illustrative partner network, shown as a placeholder — to be updated
+          with real logos.
         </p>
       )}
 

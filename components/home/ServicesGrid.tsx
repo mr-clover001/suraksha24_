@@ -11,7 +11,7 @@ export default function ServicesGrid() {
         id="services"
         tone="cream"
         className="relative overflow-hidden"
-        eyebrow="What we offer"
+        eyebrow="Way we Care"
         heading="Every kind of care, under one dedicated team"
         subheading="From a nurse's visit to a 2 a.m. emergency, one care manager coordinates all of it — so you never have to go looking for the right provider yourself."
       >
