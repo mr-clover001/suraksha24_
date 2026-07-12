@@ -12,7 +12,7 @@ const variantClasses: Record<Variant, string> = {
   "outline-light":
     "bg-transparent text-cream border border-cream/40 hover:bg-cream/10",
   ghost: "bg-transparent text-forest hover:bg-forest/5",
-  gold: "bg-gold text-forest hover:bg-gold/90 shadow-soft",
+  gold: "bg-gold text-cream hover:bg-gold/90 shadow-soft",
 };
 
 const sizeClasses: Record<Size, string> = {

@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------
- * Suraksha24 design tokens.
- * Palette + fonts are intentionally muted and fixed — see README for the
- * rationale. Edit here (not per-component) to keep the site consistent.
+ * Suraksha24 design tokens — teal/cyan medical palette.
+ * Token names are kept stable (forest/sage/gold/cream/etc.) so every
+ * component that already reads them re-themes automatically; only the
+ * values change here. Edit here (not per-component) to keep the site
+ * consistent.
  * ------------------------------------------------------------------- */
 @theme inline {
-  --color-cream: #f5f1e8;
+  --color-cream: #ffffff;
   --color-surface: #ffffff;
-  --color-surface-alt: #fbf8f1;
-  --color-forest: #2c3e2e;
-  --color-forest-light: #3d5240;
-  --color-sage: #9db18e;
-  --color-sage-light: #c3d1b8;
-  --color-gold: #b8934a;
-  --color-muted: #4a4a42;
+  --color-surface-alt: #eaf9f8;
+  --color-forest: #0b3b4a;
+  --color-forest-light: #12546a;
+  --color-sage: #14b8a6;
+  --color-sage-light: #7ee8d8;
+  --color-gold: #0f766e;
+  --color-muted: #4b6572;
 
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-inter);
 
-  --shadow-soft: 0 2px 8px rgba(44, 62, 46, 0.06), 0 12px 32px rgba(44, 62, 46, 0.08);
-  --shadow-soft-lg: 0 8px 24px rgba(44, 62, 46, 0.08), 0 24px 56px rgba(44, 62, 46, 0.1);
+  --shadow-soft: 0 2px 8px rgba(11, 59, 74, 0.07), 0 12px 32px rgba(11, 59, 74, 0.09);
+  --shadow-soft-lg: 0 8px 24px rgba(11, 59, 74, 0.1), 0 24px 56px rgba(11, 59, 74, 0.12);
 }
 
 html {
@@ -67,10 +69,10 @@ body {
 @keyframes gentle-pulse-ring {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(184, 147, 74, 0.32);
+    box-shadow: 0 0 0 0 rgba(15, 118, 110, 0.32);
   }
   50% {
-    box-shadow: 0 0 0 9px rgba(184, 147, 74, 0);
+    box-shadow: 0 0 0 9px rgba(15, 118, 110, 0);
   }
 }
 .animate-gentle-pulse {
@@ -119,6 +121,21 @@ body {
   animation: ken-burns 16s ease-in-out infinite alternate;
 }
 
+/* Continuous horizontal scroll for the partner logo marquee. The track is
+   rendered twice back-to-back and translated by exactly -50% so the loop
+   is seamless. */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee-scroll 34s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -139,6 +156,9 @@ body {
     width: 100%;
   }
   .animate-ken-burns {
+    animation: none;
+  }
+  .animate-marquee {
     animation: none;
   }
 }

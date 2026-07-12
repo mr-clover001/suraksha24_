@@ -22,12 +22,12 @@ export default function DecorativeBackground() {
 
   return (
     <div ref={ref} aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-b from-[#FFF8F3] to-white" />
+      <div className="absolute inset-0 bg-linear-to-b from-surface-alt to-white" />
 
       <div
         className="absolute inset-0 opacity-60"
         style={{
-          backgroundImage: "radial-gradient(circle, rgba(184,147,74,0.18) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, rgba(15,118,110,0.18) 1px, transparent 1px)",
           backgroundSize: "26px 26px",
           maskImage: "radial-gradient(ellipse 55% 45% at 50% 42%, black, transparent 75%)",
           WebkitMaskImage: "radial-gradient(ellipse 55% 45% at 50% 42%, black, transparent 75%)",

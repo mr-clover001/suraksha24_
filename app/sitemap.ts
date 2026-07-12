@@ -3,7 +3,7 @@ import { services, siteConfig } from "@/config/site";
 import { getAllPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/services", "/blog", "/about", "/contact"];
+  const staticRoutes = ["", "/services", "/blog", "/career", "/partner", "/about", "/contact"];
 
   const staticEntries: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
     url: `${siteConfig.url}${route}`,

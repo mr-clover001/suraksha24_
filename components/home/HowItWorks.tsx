@@ -113,7 +113,7 @@ export default function HowItWorks() {
                   className={cn(
                     "relative z-10 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300",
                     isActive
-                      ? "border-gold/40 bg-gold text-forest shadow-[0_12px_28px_rgba(184,147,74,0.24)]"
+                      ? "border-gold/40 bg-gold text-cream shadow-[0_12px_28px_rgba(15,118,110,0.24)]"
                       : "border-forest/10 bg-sage-light/35 text-forest group-hover:border-gold/30 group-hover:bg-gold/15",
                   )}
                   aria-hidden="true"

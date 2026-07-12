@@ -86,14 +86,14 @@ export default function ContactPage() {
           className="absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/55 to-black/20"
         />
 
-        <div
+        {/* <div
           aria-hidden="true"
           className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full bg-sage-light/20 blur-3xl"
         />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -bottom-32 -right-16 h-96 w-96 rounded-full bg-gold/15 blur-3xl"
-        />
+        /> */}
 
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
           <FadeIn>

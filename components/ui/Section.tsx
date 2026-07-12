@@ -6,7 +6,7 @@ type Tone = "cream" | "surface" | "forest" | "sage";
 const toneClasses: Record<Tone, string> = {
   cream: "bg-cream text-forest",
   surface: "bg-surface-alt text-forest",
-  forest: "bg-forest text-cream",
+  forest: "bg-linear-to-br from-forest via-forest to-forest-light text-cream",
   sage: "bg-sage-light/40 text-forest",
 };
 

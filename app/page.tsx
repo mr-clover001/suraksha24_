@@ -9,6 +9,7 @@ import Testimonials from "@/components/home/Testimonials";
 import WhyChooseUs from "@/components/home/why-choose-us/WhyChooseUs";
 import MeetTheTeam from "@/components/home/MeetTheTeam";
 import WhereWeCare from "@/components/home/WhereWeCare";
+import PartnerLogos from "@/components/home/PartnerLogos";
 import FAQSection from "@/components/home/FAQSection";
 import FinalCTA from "@/components/home/FinalCTA";
 
@@ -24,8 +25,9 @@ export default function Home() {
       <ReportingSection />
       <WhyChooseUs />
       <Testimonials />
-      <MeetTheTeam />
+      {/* <MeetTheTeam /> */}
       {/* <WhereWeCare /> */}
+      <PartnerLogos />
       <FAQSection />
       <FinalCTA />
     </>

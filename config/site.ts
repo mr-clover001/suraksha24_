@@ -33,10 +33,24 @@ export const contact = {
 
 export const nav = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
+  { label: "Way We Care", href: "/services" },
   { label: "Blog", href: "/blog" },
+  { label: "Careers", href: "/career" },
+  { label: "Partners", href: "/partner" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+];
+
+/**
+ * PLACEHOLDER social profile links — swap for the client's real handles
+ * before launch. Rendered in the header utility bar and site footer via
+ * components/layout/SocialLinks.tsx.
+ */
+export const socialLinks = [
+  { label: "Facebook", href: "https://facebook.com/suraksha24", icon: "facebook" as const, placeholder: true },
+  { label: "Instagram", href: "https://instagram.com/suraksha24", icon: "instagram" as const, placeholder: true },
+  { label: "LinkedIn", href: "https://linkedin.com/company/suraksha24", icon: "linkedin" as const, placeholder: true },
+  { label: "YouTube", href: "https://youtube.com/@suraksha24", icon: "youtube" as const, placeholder: true },
 ];
 
 /** Countries the "Best time to call" + country-code copy is written for. */
@@ -504,3 +518,330 @@ export const blogCta = {
   heading: "Worried about a parent in India?",
   body: "Talk to a care advisor — no obligation, just a clear next step.",
 };
+
+/* -----------------------------------------------------------------------
+ * Careers page content
+ * ------------------------------------------------------------------- */
+
+export const careerHero = {
+  eyebrow: "Careers at Suraksha24",
+  heading: "Build a career that shows up for families",
+  body: "We're hiring nurses, physiotherapists, caregivers and coordinators across Kolkata — trained, verified, and genuinely supported, not left to figure it out alone.",
+};
+
+export type JobOpening = {
+  slug: string;
+  title: string;
+  department: string;
+  type: string;
+  location: string;
+  experience: string;
+  summary: string;
+  responsibilities: string[];
+};
+
+export const jobOpenings: JobOpening[] = [
+  {
+    slug: "registered-nurse",
+    title: "Registered Nurse (GNM / BSc)",
+    department: "Clinical Care",
+    type: "Full-time · Rotational shifts",
+    location: "Kolkata & Salt Lake",
+    experience: "1+ years preferred",
+    summary:
+      "Deliver skilled nursing care — medication, wound care, vitals monitoring — to patients in their homes, backed by a clinical supervisor.",
+    responsibilities: [
+      "Administer medication and monitor vitals per the care plan",
+      "Perform wound care, injections and catheter/tube management",
+      "Document and report every visit to the care coordinator",
+      "Coordinate with the family physician on treatment updates",
+    ],
+  },
+  {
+    slug: "critical-care-nurse",
+    title: "Critical Care Nurse",
+    department: "Home ICU & Ventilator Care",
+    type: "Full-time · 12-hour shifts",
+    location: "Kolkata & Salt Lake",
+    experience: "2+ years in ICU / critical care",
+    summary:
+      "Manage ventilator and home-ICU patients with airway management, suctioning and continuous monitoring expertise.",
+    responsibilities: [
+      "Monitor ventilator-dependent and critical care patients round the clock",
+      "Recognise and escalate early signs of respiratory or cardiac distress",
+      "Maintain equipment logs and backup protocols",
+      "Liaise with treating specialists and partner hospitals",
+    ],
+  },
+  {
+    slug: "physiotherapist",
+    title: "Physiotherapist",
+    department: "Mobility & Rehabilitation",
+    type: "Full-time or Visit-based",
+    location: "Kolkata (home visits)",
+    experience: "1+ years preferred",
+    summary:
+      "Design and deliver personalised in-home rehabilitation programs for post-surgical, post-fall and chronic mobility patients.",
+    responsibilities: [
+      "Conduct in-home assessments and build individualised care plans",
+      "Deliver mobility, balance and fall-prevention sessions",
+      "Track and report progress after every session",
+      "Coordinate with nurses and doctors on recovery timelines",
+    ],
+  },
+  {
+    slug: "companion-caregiver",
+    title: "Companion Caregiver",
+    department: "Companion Care",
+    type: "Full-time · Live-in or Day shifts",
+    location: "Kolkata & surrounding areas",
+    experience: "Freshers welcome, training provided",
+    summary:
+      "Be the consistent, familiar presence a senior looks forward to — conversation, daily routines, and a genuine, watchful eye.",
+    responsibilities: [
+      "Support daily routines: meals, light housekeeping, errands",
+      "Accompany on walks and to appointments",
+      "Notice and report emotional or physical changes",
+      "Build a real, consistent relationship — not a rotating roster",
+    ],
+  },
+  {
+    slug: "care-coordinator",
+    title: "Care Coordinator",
+    department: "Operations",
+    type: "Full-time",
+    location: "Salt Lake, Kolkata (office + field)",
+    experience: "2+ years in healthcare coordination",
+    summary:
+      "Own the family relationship end-to-end — scheduling, updates, escalations — as the single point of contact families trust.",
+    responsibilities: [
+      "Manage caseloads across nursing, companion and physiotherapy teams",
+      "Be the direct point of contact for assigned families",
+      "Monitor visit reports and flag concerns early",
+      "Coordinate emergency response and hospital admissions",
+    ],
+  },
+  {
+    slug: "diagnostic-technician",
+    title: "Diagnostic Sample Collection Technician",
+    department: "Doorstep Diagnostics",
+    type: "Full-time",
+    location: "Kolkata (field visits)",
+    experience: "Certified phlebotomy training required",
+    summary:
+      "Collect samples at patients' homes under strict protocol, and get seniors accurate results without the ordeal of a clinic visit.",
+    responsibilities: [
+      "Follow certified collection and hygiene protocols at every visit",
+      "Transport samples under correct temperature and time conditions",
+      "Coordinate scheduling with the care coordination team",
+      "Represent Suraksha24's clinical standards in every home visit",
+    ],
+  },
+];
+
+/** Icon names map to lucide-react components in components/career/OpenPositions.tsx. */
+export const careerPerks = [
+  {
+    icon: "GraduationCap",
+    title: "Structured training & certification",
+    body: "Every hire goes through supervised onboarding before their first solo visit — and ongoing clinical training after that.",
+  },
+  {
+    icon: "ShieldCheck",
+    title: "A respected, verified team",
+    body: "You're never sent into a home alone and unsupported — every case has a clinical supervisor and care coordinator behind it.",
+  },
+  {
+    icon: "TrendingUp",
+    title: "Real career growth",
+    body: "From caregiver to senior nurse to care coordinator — we promote from within and invest in your next step.",
+  },
+  {
+    icon: "Clock3",
+    title: "Flexible, fair shifts",
+    body: "Choose from live-in, day-shift or visit-based roles, with transparent, on-time pay — no ambiguity, no delays.",
+  },
+  {
+    icon: "HeartHandshake",
+    title: "Work that matters",
+    body: "You're not filling a shift — you're the reason a family abroad can sleep at night. That's the job.",
+  },
+  {
+    icon: "Users",
+    title: "A team that has your back",
+    body: "24×7 backup support, a real supervisor to call, and colleagues who understand the work — never on your own.",
+  },
+];
+
+export const hiringSteps = [
+  { step: "01", title: "Apply online", body: "Tell us about your experience and the role you're interested in — takes less than five minutes." },
+  { step: "02", title: "Screening call", body: "A quick conversation with our HR team about your background, availability and expectations." },
+  { step: "03", title: "Skills & background check", body: "Clinical roles include a skills assessment; all roles include ID, reference and background verification." },
+  { step: "04", title: "Offer & onboarding", body: "A clear offer, followed by supervised onboarding and training before your first assignment." },
+];
+
+export const experienceOptions = [
+  "Fresher / no experience yet",
+  "Less than 1 year",
+  "1–3 years",
+  "3–5 years",
+  "5+ years",
+];
+
+/* -----------------------------------------------------------------------
+ * Partners page content
+ * ------------------------------------------------------------------- */
+
+export const partnerHero = {
+  eyebrow: "Partner with Suraksha24",
+  heading: "One trusted home-care partner, for everyone you refer",
+  body: "Hospitals, labs, doctors, corporates and community organizations across Kolkata work with us so their patients, employees and members get coordinated, verified home healthcare — not a name on a pamphlet.",
+};
+
+export type PartnershipType = {
+  slug: string;
+  title: string;
+  icon: string;
+  description: string;
+  idealFor: string[];
+};
+
+export const partnershipTypes: PartnershipType[] = [
+  {
+    slug: "hospitals-clinics",
+    title: "Hospitals & Clinics",
+    icon: "Building2",
+    description:
+      "Seamless discharge-to-home handoffs — your patients transition into verified, coordinated home care instead of an information gap.",
+    idealFor: [
+      "Reducing readmissions with structured post-discharge nursing",
+      "A trusted referral partner for home ICU & ventilator cases",
+      "Coordinated physiotherapy for surgical and orthopedic patients",
+    ],
+  },
+  {
+    slug: "diagnostic-labs",
+    title: "Diagnostic Labs & Pathology",
+    icon: "FlaskConical",
+    description:
+      "Extend your reach into patients' homes with our doorstep collection network, while we route routine testing referrals your way.",
+    idealFor: [
+      "NABL-accredited labs looking to expand home collection",
+      "Joint reporting integrated into ongoing care plans",
+      "Reliable sample logistics and technician training",
+    ],
+  },
+  {
+    slug: "doctors-specialists",
+    title: "Doctors & Specialists",
+    icon: "Stethoscope",
+    description:
+      "A dependable home-care extension of your practice — so your treatment plans are followed through, not left to chance after the appointment.",
+    idealFor: [
+      "Post-consultation nursing and monitoring for your patients",
+      "Direct coordinator updates so you stay informed between visits",
+      "A trusted referral for families who ask “who can help at home?”",
+    ],
+  },
+  {
+    slug: "corporate-insurance",
+    title: "Corporate & Insurance",
+    icon: "Handshake",
+    description:
+      "Employee eldercare benefits and panel empanelment that give families real, usable support — not just a helpline number.",
+    idealFor: [
+      "Elder-care benefit programs for employees with parents in Kolkata",
+      "Empanelment for cashless or reimbursed home healthcare claims",
+      "Dedicated account coordination for corporate partners",
+    ],
+  },
+  {
+    slug: "community-organizations",
+    title: "NRI & Community Organizations",
+    icon: "Globe2",
+    description:
+      "Bring trusted home healthcare to your members' families back home — with a partner who understands the distance.",
+    idealFor: [
+      "Associations supporting diaspora families with parents in India",
+      "Group-rate arrangements for members",
+      "Co-hosted awareness sessions on elder care planning",
+    ],
+  },
+  {
+    slug: "medical-tourism-facilitators",
+    title: "Medical Tourism Facilitators",
+    icon: "MapPinned",
+    description:
+      "A reliable Kolkata-based partner for accommodation, local logistics and post-treatment recovery care for your international patients.",
+    idealFor: [
+      "Facilitators serving Bangladeshi and international patients",
+      "End-to-end coordination from airport to post-discharge recovery",
+      "Skilled nursing and physiotherapy for patients before they travel home",
+    ],
+  },
+];
+
+export const partnerBenefits = [
+  {
+    icon: "BadgeCheck",
+    title: "Verified, clinically supervised care",
+    body: "Every referral is handled by trained, background-verified staff under active clinical oversight — your reputation is protected.",
+  },
+  {
+    icon: "Clock3",
+    title: "Fast turnaround",
+    body: "New referrals are contacted and assessed quickly — families don't fall into a gap between your handoff and our follow-up.",
+  },
+  {
+    icon: "FileText",
+    title: "Transparent reporting",
+    body: "Structured updates after every visit, shared with you where relevant — so joint cases stay coordinated, not siloed.",
+  },
+  {
+    icon: "Handshake",
+    title: "A genuine, long-term relationship",
+    body: "We assign a dedicated partnerships contact — not a rotating account manager — so the relationship stays personal.",
+  },
+];
+
+export const partnerProcess = [
+  { step: "01", title: "Introductory call", body: "Tell us about your organization and what a partnership would look like for your patients, employees or members." },
+  { step: "02", title: "Partnership terms", body: "We agree on referral flow, reporting expectations and, where relevant, commercial terms — in writing, upfront." },
+  { step: "03", title: "Onboarding", body: "Your team gets a direct line to our partnerships desk, and we brief our care team on your specific requirements." },
+  { step: "04", title: "Ongoing coordination", body: "A dedicated contact keeps the relationship running smoothly, with regular check-ins on how referrals are going." },
+];
+
+export const partnerTypeOptions = [
+  "Hospital / Clinic",
+  "Diagnostic Lab",
+  "Doctor / Specialist",
+  "Corporate / Insurance",
+  "NRI / Community Organization",
+  "Medical Tourism Facilitator",
+  "Other",
+];
+
+/**
+ * PLACEHOLDER partner network logos for the homepage marquee
+ * (components/home/PartnerLogos.tsx) — illustrative names, not real
+ * organizations. Replace `name` with the real organization and add a
+ * logo file at `public/assests/partners/<slug>.png` (or .svg) before
+ * launch; until a logo file exists, that entry renders as a text
+ * wordmark chip instead of an image.
+ */
+export type PartnerLogoEntry = {
+  slug: string;
+  name: string;
+  logo: string;
+};
+
+export const partnerLogos: PartnerLogoEntry[] = [
+  { slug: "northgate-hospital", name: "Northgate Hospital", logo: "/assests/partners/northgate-hospital.png" },
+  { slug: "silver-oak-diagnostics", name: "Silver Oak Diagnostics", logo: "/assests/partners/silver-oak-diagnostics.png" },
+  { slug: "meridian-health-group", name: "Meridian Health Group", logo: "/assests/partners/meridian-health-group.png" },
+  { slug: "lotus-care-clinic", name: "Lotus Care Clinic", logo: "/assests/partners/lotus-care-clinic.png" },
+  { slug: "harbourview-medical-center", name: "Harbourview Medical Center", logo: "/assests/partners/harbourview-medical-center.png" },
+  { slug: "crestwood-wellness", name: "Crestwood Wellness", logo: "/assests/partners/crestwood-wellness.png" },
+  { slug: "bluewell-diagnostics", name: "Bluewell Diagnostics", logo: "/assests/partners/bluewell-diagnostics.png" },
+  { slug: "kingston-multispeciality", name: "Kingston Multispeciality", logo: "/assests/partners/kingston-multispeciality.png" },
+];

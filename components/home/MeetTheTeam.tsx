@@ -4,7 +4,7 @@ import FadeIn from "@/components/ui/FadeIn";
 
 export default function MeetTheTeam() {
   return (
-    <section className="relative overflow-hidden bg-[#242019] py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-forest py-20 sm:py-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-gold/5 blur-3xl"
@@ -44,17 +44,17 @@ export default function MeetTheTeam() {
                   />
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#242019] via-[#242019]/15 to-transparent"
+                    className="pointer-events-none absolute inset-0 bg-linear-to-t from-forest via-forest/15 to-transparent"
                   />
                   <div
                     aria-hidden="true"
                     className="pointer-events-none absolute inset-0 bg-gold/10 mix-blend-overlay"
                   />
                 </div>
-                <h3 className="font-display mt-6 text-4xl leading-none tracking-tight text-[#d3bb8e] sm:text-[2.5rem]">
+                <h3 className="font-display mt-6 text-4xl leading-none tracking-tight text-sage-light sm:text-[2.5rem]">
                   {member.name.toUpperCase()}
                 </h3>
-                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#d3bb8e]/75">
+                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-sage-light/75">
                   {member.role}
                 </p>
                 <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/55">
@@ -80,14 +80,14 @@ export default function MeetTheTeam() {
               <br />
               Today
             </p>
-            <h2 className="font-display relative text-right text-[clamp(2rem,3.2vw,3.75rem)] leading-[1.15] text-[#d3bb8e]">
+            <h2 className="font-display relative text-right text-[clamp(2rem,3.2vw,3.75rem)] leading-[1.15] text-sage-light">
               Meet
               <br />
               the
               <br />
               team
             </h2>
-            <p className="relative mt-10 text-right text-[clamp(11px,0.9vw,16px)] font-semibold uppercase tracking-[0.2em] text-[#d3bb8e]/55">
+            <p className="relative mt-10 text-right text-[clamp(11px,0.9vw,16px)] font-semibold uppercase tracking-[0.2em] text-sage-light/55">
               Suraksha24 Team#
             </p>
           </FadeIn>

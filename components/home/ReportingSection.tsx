@@ -20,14 +20,14 @@ export default function ReportingSection() {
       containerClassName="max-w-7xl"
       className="relative overflow-hidden"
     >
-      <div
+      {/* <div
         aria-hidden="true"
         className="pointer-events-none absolute -left-24 top-10 h-96 w-96 rounded-full bg-sage-light/30 blur-3xl"
       />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-gold/10 blur-3xl"
-      />
+      /> */}
 
       <div className="relative grid items-center gap-16 lg:grid-cols-2">
         <FadeIn>

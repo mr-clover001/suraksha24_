@@ -7,7 +7,9 @@ import { usePathname } from "next/navigation";
 import {
   ArrowRight,
   BookOpen,
+  Briefcase,
   ChevronDown,
+  Handshake,
   Home as HomeIcon,
   Info,
   Mail,
@@ -21,6 +23,7 @@ import {
 } from "lucide-react";
 import { contact, nav, services, siteConfig } from "@/config/site";
 import Button from "@/components/ui/Button";
+import SocialLinks from "@/components/layout/SocialLinks";
 import { cn } from "@/lib/cn";
 
 // Pages whose hero has a full-bleed background image the header can float
@@ -31,12 +34,16 @@ const OVERLAY_HERO_ROUTES = new Set([
   "/blog",
   "/contact",
   "/services",
+  "/career",
+  "/partner",
 ]);
 
 const navIcons: Record<string, LucideIcon> = {
   "/": HomeIcon,
   "/services": Stethoscope,
   "/blog": BookOpen,
+  "/career": Briefcase,
+  "/partner": Handshake,
   "/about": Info,
   "/contact": Mail,
 };
@@ -163,6 +170,11 @@ export default function Header() {
           >
             <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
+          <span
+            className="hidden h-4 w-px bg-cream/20 xl:block"
+            aria-hidden="true"
+          />
+          <SocialLinks className="hidden xl:flex" tone="dark" size="sm" />
         </div>
       </div>
 
@@ -181,31 +193,20 @@ export default function Header() {
       >
         <Link
           href="/"
-          className="group flex items-center gap-2.5"
+          className="group flex items-center"
           onClick={() => setOpen(false)}
         >
-          <span className="relative h-10 w-10 flex-shrink-0 transition-transform duration-300 group-hover:scale-105 sm:h-11 sm:w-11">
-            <Image
-              src="/assests/LogoIcon.png"
-              alt=""
-              fill
-              sizes="44px"
-              className="object-contain"
-              priority
-            />
-          </span>
-          <span
-            className={cn(
-              "font-display text-xl leading-none tracking-tight transition-colors duration-300 sm:text-2xl",
-              isOverlay ? "text-cream" : "text-forest",
-            )}
-          >
-            {siteConfig.name}
-            <span className="text-gold">.</span>
-          </span>
+          <Image
+            src="/assests/LogoNew1.png"
+            alt={siteConfig.name}
+            width={1023}
+            height={280}
+            priority
+            className="h-9 w-auto flex-shrink-0 transition-transform duration-300 group-hover:scale-105 sm:h-12"
+          />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
           {nav.map((item) => {
             const active = isActive(pathname, item.href);
 
@@ -324,7 +325,7 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-5 md:flex">
+        <div className="hidden items-center gap-5 lg:flex">
           <span
             className={cn(
               "hidden items-center gap-1.5 text-xs transition-colors duration-300 lg:inline-flex",
@@ -351,7 +352,7 @@ export default function Header() {
           >
             <MessageCircle className="h-4 w-4" aria-hidden="true" />
           </a>
-          <Button href={contact.phoneHref} variant="primary" size="md">
+          <Button href={contact.phoneHref} variant="gold" size="md">
             <Phone className="h-4 w-4" aria-hidden="true" />
             Call
           </Button>
@@ -360,7 +361,7 @@ export default function Header() {
         <button
           type="button"
           className={cn(
-            "inline-flex items-center justify-center rounded-full p-2 transition-colors duration-300 md:hidden",
+            "inline-flex items-center justify-center rounded-full p-2 transition-colors duration-300 lg:hidden",
             isOverlay ? "text-cream" : "text-forest",
           )}
           aria-expanded={open}
@@ -377,7 +378,7 @@ export default function Header() {
         aria-hidden={!open}
         inert={!open}
         className={cn(
-          "grid border-forest/8 bg-cream transition-all duration-300 ease-in-out md:hidden",
+          "grid border-forest/8 bg-cream transition-all duration-300 ease-in-out lg:hidden",
           open
             ? "grid-rows-[1fr] border-t opacity-100"
             : "grid-rows-[0fr] border-t-0 opacity-0",
@@ -483,7 +484,7 @@ export default function Header() {
             <div className="mt-3 flex gap-2.5">
               <Button
                 href={contact.phoneHref}
-                variant="primary"
+                variant="gold"
                 size="md"
                 className="flex-1"
               >
@@ -509,6 +510,12 @@ export default function Header() {
               />
               {contact.availability}
             </p>
+
+            <SocialLinks
+              className="mt-4 justify-center"
+              tone="light"
+              size="sm"
+            />
           </nav>
         </div>
       </div>

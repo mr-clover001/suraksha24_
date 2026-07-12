@@ -73,7 +73,7 @@ export default function WhereWeCare() {
             {serviceAreas.map((area) => (
               <span
                 key={area}
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-forest/10 bg-linear-to-b from-white to-surface-alt px-4 py-2.5 text-sm font-medium text-forest shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_1px_2px_rgba(44,62,46,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] hover:border-gold/40 hover:from-gold/15 hover:to-gold/5 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_14px_28px_-8px_rgba(184,147,74,0.45)]"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-forest/10 bg-linear-to-b from-white to-surface-alt px-4 py-2.5 text-sm font-medium text-forest shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_1px_2px_rgba(11,59,74,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] hover:border-gold/40 hover:from-gold/15 hover:to-gold/5 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_14px_28px_-8px_rgba(15,118,110,0.45)]"
               >
                 {/* Glossy sheen sweep on hover */}
                 <span

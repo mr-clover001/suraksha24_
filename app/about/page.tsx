@@ -48,17 +48,17 @@ export default function AboutPage() {
         </div>
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-gradient-to-r from-black/60 via-black/30 to-black/10"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-black/100 via-black/60 to-black/30"
         />
 
-        <div
+        {/* <div
           aria-hidden="true"
           className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full bg-sage-light/20 blur-3xl"
         />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -bottom-32 -right-16 h-96 w-96 rounded-full bg-gold/15 blur-3xl"
-        />
+        /> */}
 
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
           <FadeIn>
@@ -68,10 +68,10 @@ export default function AboutPage() {
                 Why Suraksha24 Exists
               </h1>
               <p className="mt-7 text-lg leading-relaxed text-cream/90">
-                We&rsquo;ve all had that moment — a parent who needs care, and not
-                knowing where to begin. The hospital feels too clinical. Hiring
-                help on your own feels uncertain. That gap, between worry and
-                trust, is exactly where Suraksha24 steps in.
+                We&rsquo;ve all had that moment — a parent who needs care, and
+                not knowing where to begin. The hospital feels too clinical.
+                Hiring help on your own feels uncertain. That gap, between worry
+                and trust, is exactly where Suraksha24 steps in.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <Button href="/contact" variant="gold" size="lg">
@@ -90,10 +90,10 @@ export default function AboutPage() {
         <FadeIn>
           <div className="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed text-muted">
             <p>
-              We bring together trained nurses, physiotherapists, caregivers, and
-              complete medical equipment — all coordinated, all verified, all
-              under one roof. So instead of managing ten different things during
-              an already stressful time, you make one call.
+              We bring together trained nurses, physiotherapists, caregivers,
+              and complete medical equipment — all coordinated, all verified,
+              all under one roof. So instead of managing ten different things
+              during an already stressful time, you make one call.
             </p>
             <p className="font-display border-l-2 border-gold/50 pl-6 text-xl italic leading-snug text-forest">
               Because when it comes to family, &ldquo;good enough&rdquo; was

@@ -15,22 +15,21 @@ export default function TrustStrip() {
               <div
                 key={stat.label}
                 className={cn(
-                  index === trustStats.length - 1 && "col-span-2 sm:col-span-1"
+                  index === trustStats.length - 1 && "col-span-2 sm:col-span-1",
                 )}
               >
                 <StatCounter
                   value={stat.value}
-                  mark={stat.placeholder && <span className="text-gold">*</span>}
+                  mark={
+                    stat.placeholder && <span className="text-gold">*</span>
+                  }
                 />
-                <p className="mt-1.5 text-xs uppercase tracking-wide text-muted">{stat.label}</p>
+                <p className="mt-1.5 text-xs uppercase tracking-wide text-muted">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </div>
-          {hasPlaceholder && (
-            <p className="mt-8 text-center text-xs text-muted/70">
-              *Illustrative figure, shown as a placeholder — to be updated with verified data.
-            </p>
-          )}
         </FadeIn>
       </div>
     </section>

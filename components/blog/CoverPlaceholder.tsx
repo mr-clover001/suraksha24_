@@ -19,7 +19,7 @@ export default function CoverPlaceholder({ className }: { className?: string }) 
         className="absolute inset-0 opacity-20"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 20% 30%, rgba(157,177,142,0.5) 0, transparent 45%), radial-gradient(circle at 80% 70%, rgba(184,147,74,0.4) 0, transparent 45%)",
+            "radial-gradient(circle at 20% 30%, rgba(20,184,166,0.5) 0, transparent 45%), radial-gradient(circle at 80% 70%, rgba(15,118,110,0.4) 0, transparent 45%)",
         }}
       />
       <HeartPulse className="relative h-9 w-9 text-cream/70" />

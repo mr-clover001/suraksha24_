@@ -4,21 +4,22 @@ import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { contact, nav, services, siteConfig } from "@/config/site";
 import Button from "@/components/ui/Button";
 import BackToTopButton from "@/components/layout/BackToTopButton";
+import SocialLinks from "@/components/layout/SocialLinks";
 
 export default function Footer() {
   const year = new Date().getFullYear();
   const featuredServices = services.slice(0, 5);
 
   return (
-    <footer className="relative overflow-hidden border-t border-cream/10 bg-forest text-cream/80">
-      <div
+    <footer className="relative overflow-hidden border-t border-cream/10 bg-linear-to-br from-forest via-forest to-forest-light text-cream/80">
+      {/* <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-24 right-0 h-80 w-80 rounded-full bg-sage-light/10 blur-3xl"
       />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-32 left-0 h-80 w-80 rounded-full bg-gold/10 blur-3xl"
-      />
+      /> */}
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
         <div className="flex flex-col items-center gap-6 border-b border-cream/10 py-14 text-center sm:flex-row sm:justify-between sm:text-left">
@@ -31,7 +32,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-shrink-0 gap-3">
-            <Button href={contact.phoneHref} size="md">
+            <Button href={contact.phoneHref} variant="gold" size="md">
               <Phone className="h-4 w-4" aria-hidden="true" />
               Call us
             </Button>
@@ -49,20 +50,14 @@ export default function Footer() {
 
         <div className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" className="group flex items-center gap-2.5">
-              <span className="relative h-10 w-10 flex-shrink-0 transition-transform duration-300 group-hover:scale-105 sm:h-11 sm:w-11">
-                <Image
-                  src="/assests/LogoIcon.png"
-                  alt=""
-                  fill
-                  sizes="44px"
-                  className="object-contain"
-                />
-              </span>
-              <span className="font-display text-xl leading-none tracking-tight text-cream sm:text-2xl">
-                {siteConfig.name}
-                <span className="text-gold">.</span>
-              </span>
+            <Link href="/" className="group flex items-center">
+              <Image
+                src="/assests/LogoNew1.png"
+                alt={siteConfig.name}
+                width={1023}
+                height={280}
+                className="h-9 w-auto flex-shrink-0 transition-transform duration-300 group-hover:scale-105 sm:h-14"
+              />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/65">
               {siteConfig.tagline}
@@ -74,6 +69,10 @@ export default function Footer() {
               />
               {contact.availability}
             </p>
+            <div className="mt-6">
+              <p className="eyebrow mb-3 text-sage-light">Follow us</p>
+              <SocialLinks tone="dark" />
+            </div>
           </div>
 
           <div>
@@ -94,7 +93,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="eyebrow mb-5 text-sage-light">Services</p>
+            <p className="eyebrow mb-5 text-sage-light">Way We Care</p>
             <ul className="space-y-3">
               {featuredServices.map((service) => (
                 <li key={service.slug}>

@@ -69,7 +69,7 @@ export default function ServiceCard({
               className="absolute -bottom-1.5 left-0 h-px w-0 bg-gold transition-all duration-300 ease-out group-hover:w-full"
             />
           </span>
-          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold/30 text-gold transition-all duration-300 ease-out group-hover:scale-[1.15] group-hover:border-gold group-hover:bg-gold group-hover:text-white group-hover:shadow-[0_6px_18px_-4px_rgba(184,147,74,0.55)]">
+          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold/30 text-gold transition-all duration-300 ease-out group-hover:scale-[1.15] group-hover:border-gold group-hover:bg-gold group-hover:text-white group-hover:shadow-[0_6px_18px_-4px_rgba(15,118,110,0.55)]">
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </span>
         </div>

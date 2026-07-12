@@ -40,7 +40,7 @@ export default function GlowSpotlight({ children, className }: GlowSpotlightProp
           style={{
             opacity: "var(--spot-opacity, 0)",
             background:
-              "radial-gradient(560px circle at var(--spot-x, 50%) var(--spot-y, 20%), rgba(184,147,74,0.16), transparent 65%)",
+              "radial-gradient(560px circle at var(--spot-x, 50%) var(--spot-y, 20%), rgba(15,118,110,0.16), transparent 65%)",
           }}
         />
       </div>

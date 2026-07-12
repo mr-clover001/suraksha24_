@@ -21,7 +21,7 @@ export default function FinalCTA() {
                 href={contact.phoneHref}
                 className="flex items-center gap-3 text-cream/90 hover:text-cream"
               >
-                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-cream/10">
+                <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gold/25 text-sage-light">
                   <Phone className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <span>

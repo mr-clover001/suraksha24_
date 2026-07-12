@@ -5,11 +5,10 @@ import Section from "@/components/ui/Section";
 import FadeIn from "@/components/ui/FadeIn";
 import ServiceCard from "@/components/ui/ServiceCard";
 import ServicePickerSection from "@/components/home/ServicePickerSection";
-import CarePlanEstimatorSection from "@/components/services/CarePlanEstimatorSection";
 import FinalCTA from "@/components/home/FinalCTA";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Way We Care",
   description:
     "Skilled nursing, companion care, physiotherapy, 24×7 emergency response, home ICU, medical equipment and doorstep diagnostics — home healthcare in Kolkata for families abroad.",
   alternates: { canonical: `${siteConfig.url}/services` },
@@ -21,12 +20,12 @@ export default function ServicesPage() {
       <section className="relative isolate overflow-hidden pt-32 pb-20 sm:pt-36 sm:pb-24 lg:pt-44 lg:pb-28">
         <div className="absolute inset-0 -z-20">
           <Image
-            src="/assests/Services.webp"
-            alt="A caregiver leans down warmly to hand a cup of tea to an elderly woman seated in a sunlit, homely living room"
+            src="/assests/ServicesB.jpg"
+            alt="A nurse in scrubs gently checks on an elderly man resting in a hospital-style bed at home"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[62%_42%]"
+            className="object-cover object-[60%_40%]"
           />
         </div>
         <div
@@ -46,7 +45,7 @@ export default function ServicesPage() {
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
           <FadeIn>
             <div className="max-w-xl">
-              <p className="eyebrow mb-6">Our services</p>
+              <p className="eyebrow mb-6">Way We Care</p>
               <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-cream sm:text-5xl">
                 Comprehensive care, without the guesswork
               </h1>
@@ -75,8 +74,6 @@ export default function ServicesPage() {
       </Section>
 
       <ServicePickerSection />
-
-      <CarePlanEstimatorSection />
 
       <FinalCTA />
     </>

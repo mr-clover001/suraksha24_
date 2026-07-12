@@ -19,25 +19,23 @@ export default function Hero() {
       </div>
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-black/70 via-black/45 to-black/25"
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-black/90 via-black/70 to-black/35"
       />
-
+      {/* 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full bg-sage-light/20 blur-3xl"
+        className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full  blur-3xl"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 -right-16 h-96 w-96 rounded-full bg-gold/15 blur-3xl"
-      />
+        className="pointer-events-none absolute -bottom-32 -right-16 h-96 w-96 rounded-full blur-3xl"
+      /> */}
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
         <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <FadeIn>
             <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:max-w-none lg:text-left">
-              <p className="eyebrow mb-6">
-                Home health care, coordinated
-              </p>
+              <p className="eyebrow mb-6">Home health care, coordinated</p>
               <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-cream sm:text-5xl lg:text-[3.4rem]">
                 Protection that never sleeps, care that never stops
               </h1>
