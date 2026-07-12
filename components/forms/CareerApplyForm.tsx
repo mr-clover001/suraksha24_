@@ -168,7 +168,7 @@ export default function CareerApplyForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-forest px-8 py-4 text-base font-medium tracking-wide text-cream shadow-soft transition-all duration-300 hover:bg-forest-light hover:shadow-soft-lg disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+          className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-linear-to-r from-forest via-forest-light via-60% to-teal px-8 py-4 text-base font-medium tracking-wide text-cream shadow-soft transition-all duration-300 hover:brightness-110 hover:shadow-soft-lg disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
         >
           {status === "submitting" ? "Submitting…" : "Submit application"}
           <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />

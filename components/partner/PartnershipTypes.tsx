@@ -36,15 +36,29 @@ export default function PartnershipTypes() {
           return (
             <FadeIn key={type.slug} delay={(index % 3) * 80}>
               <Card className="h-full">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-forest text-sage-light">
-                  <Icon className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden="true" />
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg">
+                  <Icon
+                    className="h-4.5 w-4.5"
+                    strokeWidth={1.75}
+                    aria-hidden="true"
+                  />
                 </div>
-                <h3 className="font-display mt-5 text-lg text-forest">{type.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-muted">{type.description}</p>
+                <h3 className="font-display mt-5 text-lg text-forest">
+                  {type.title}
+                </h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-muted">
+                  {type.description}
+                </p>
                 <ul className="mt-5 space-y-2 border-t border-forest/8 pt-5">
                   {type.idealFor.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm text-forest/85">
-                      <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-gold" aria-hidden="true" />
+                    <li
+                      key={item}
+                      className="flex items-start gap-2.5 text-sm text-forest/85"
+                    >
+                      <span
+                        className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-gold"
+                        aria-hidden="true"
+                      />
                       {item}
                     </li>
                   ))}

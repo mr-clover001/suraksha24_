@@ -35,22 +35,50 @@ export const nav = [
   { label: "Home", href: "/" },
   { label: "Way We Care", href: "/services" },
   { label: "Blog", href: "/blog" },
+  // { label: "Careers", href: "/career" },
+  // { label: "Partners", href: "/partner" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+export const navFooter = [
+  { label: "Home", href: "/" },
+  { label: "Way We Care", href: "/services" },
+  { label: "Blog", href: "/blog" },
   { label: "Careers", href: "/career" },
   { label: "Partners", href: "/partner" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
-
 /**
  * PLACEHOLDER social profile links — swap for the client's real handles
  * before launch. Rendered in the header utility bar and site footer via
  * components/layout/SocialLinks.tsx.
  */
 export const socialLinks = [
-  { label: "Facebook", href: "https://facebook.com/suraksha24", icon: "facebook" as const, placeholder: true },
-  { label: "Instagram", href: "https://instagram.com/suraksha24", icon: "instagram" as const, placeholder: true },
-  { label: "LinkedIn", href: "https://linkedin.com/company/suraksha24", icon: "linkedin" as const, placeholder: true },
-  { label: "YouTube", href: "https://youtube.com/@suraksha24", icon: "youtube" as const, placeholder: true },
+  {
+    label: "Facebook",
+    href: "https://facebook.com/suraksha24",
+    icon: "facebook" as const,
+    placeholder: true,
+  },
+  {
+    label: "Instagram",
+    href: "https://instagram.com/suraksha24",
+    icon: "instagram" as const,
+    placeholder: true,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/company/suraksha24",
+    icon: "linkedin" as const,
+    placeholder: true,
+  },
+  {
+    label: "YouTube",
+    href: "https://youtube.com/@suraksha24",
+    icon: "youtube" as const,
+    placeholder: true,
+  },
 ];
 
 /** Countries the "Best time to call" + country-code copy is written for. */
@@ -674,10 +702,26 @@ export const careerPerks = [
 ];
 
 export const hiringSteps = [
-  { step: "01", title: "Apply online", body: "Tell us about your experience and the role you're interested in — takes less than five minutes." },
-  { step: "02", title: "Screening call", body: "A quick conversation with our HR team about your background, availability and expectations." },
-  { step: "03", title: "Skills & background check", body: "Clinical roles include a skills assessment; all roles include ID, reference and background verification." },
-  { step: "04", title: "Offer & onboarding", body: "A clear offer, followed by supervised onboarding and training before your first assignment." },
+  {
+    step: "01",
+    title: "Apply online",
+    body: "Tell us about your experience and the role you're interested in — takes less than five minutes.",
+  },
+  {
+    step: "02",
+    title: "Screening call",
+    body: "A quick conversation with our HR team about your background, availability and expectations.",
+  },
+  {
+    step: "03",
+    title: "Skills & background check",
+    body: "Clinical roles include a skills assessment; all roles include ID, reference and background verification.",
+  },
+  {
+    step: "04",
+    title: "Offer & onboarding",
+    body: "A clear offer, followed by supervised onboarding and training before your first assignment.",
+  },
 ];
 
 export const experienceOptions = [
@@ -805,10 +849,26 @@ export const partnerBenefits = [
 ];
 
 export const partnerProcess = [
-  { step: "01", title: "Introductory call", body: "Tell us about your organization and what a partnership would look like for your patients, employees or members." },
-  { step: "02", title: "Partnership terms", body: "We agree on referral flow, reporting expectations and, where relevant, commercial terms — in writing, upfront." },
-  { step: "03", title: "Onboarding", body: "Your team gets a direct line to our partnerships desk, and we brief our care team on your specific requirements." },
-  { step: "04", title: "Ongoing coordination", body: "A dedicated contact keeps the relationship running smoothly, with regular check-ins on how referrals are going." },
+  {
+    step: "01",
+    title: "Introductory call",
+    body: "Tell us about your organization and what a partnership would look like for your patients, employees or members.",
+  },
+  {
+    step: "02",
+    title: "Partnership terms",
+    body: "We agree on referral flow, reporting expectations and, where relevant, commercial terms — in writing, upfront.",
+  },
+  {
+    step: "03",
+    title: "Onboarding",
+    body: "Your team gets a direct line to our partnerships desk, and we brief our care team on your specific requirements.",
+  },
+  {
+    step: "04",
+    title: "Ongoing coordination",
+    body: "A dedicated contact keeps the relationship running smoothly, with regular check-ins on how referrals are going.",
+  },
 ];
 
 export const partnerTypeOptions = [
@@ -836,12 +896,44 @@ export type PartnerLogoEntry = {
 };
 
 export const partnerLogos: PartnerLogoEntry[] = [
-  { slug: "northgate-hospital", name: "Northgate Hospital", logo: "/assests/partners/northgate-hospital.png" },
-  { slug: "silver-oak-diagnostics", name: "Silver Oak Diagnostics", logo: "/assests/partners/silver-oak-diagnostics.png" },
-  { slug: "meridian-health-group", name: "Meridian Health Group", logo: "/assests/partners/meridian-health-group.png" },
-  { slug: "lotus-care-clinic", name: "Lotus Care Clinic", logo: "/assests/partners/lotus-care-clinic.png" },
-  { slug: "harbourview-medical-center", name: "Harbourview Medical Center", logo: "/assests/partners/harbourview-medical-center.png" },
-  { slug: "crestwood-wellness", name: "Crestwood Wellness", logo: "/assests/partners/crestwood-wellness.png" },
-  { slug: "bluewell-diagnostics", name: "Bluewell Diagnostics", logo: "/assests/partners/bluewell-diagnostics.png" },
-  { slug: "kingston-multispeciality", name: "Kingston Multispeciality", logo: "/assests/partners/kingston-multispeciality.png" },
+  {
+    slug: "northgate-hospital",
+    name: "Northgate Hospital",
+    logo: "/assests/partners/northgate-hospital.png",
+  },
+  {
+    slug: "silver-oak-diagnostics",
+    name: "Silver Oak Diagnostics",
+    logo: "/assests/partners/silver-oak-diagnostics.png",
+  },
+  {
+    slug: "meridian-health-group",
+    name: "Meridian Health Group",
+    logo: "/assests/partners/meridian-health-group.png",
+  },
+  {
+    slug: "lotus-care-clinic",
+    name: "Lotus Care Clinic",
+    logo: "/assests/partners/lotus-care-clinic.png",
+  },
+  {
+    slug: "harbourview-medical-center",
+    name: "Harbourview Medical Center",
+    logo: "/assests/partners/harbourview-medical-center.png",
+  },
+  {
+    slug: "crestwood-wellness",
+    name: "Crestwood Wellness",
+    logo: "/assests/partners/crestwood-wellness.png",
+  },
+  {
+    slug: "bluewell-diagnostics",
+    name: "Bluewell Diagnostics",
+    logo: "/assests/partners/bluewell-diagnostics.png",
+  },
+  {
+    slug: "kingston-multispeciality",
+    name: "Kingston Multispeciality",
+    logo: "/assests/partners/kingston-multispeciality.png",
+  },
 ];

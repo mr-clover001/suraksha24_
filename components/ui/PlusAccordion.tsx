@@ -32,7 +32,7 @@ export default function PlusAccordion({ items }: PlusAccordionProps) {
                 "rounded-2xl border bg-surface shadow-soft transition-all duration-300",
                 isOpen
                   ? "border-gold/25 shadow-soft-lg"
-                  : "border-forest/8 hover:border-gold/20 hover:shadow-soft-lg"
+                  : "border-forest/8 hover:border-gold/20 hover:shadow-soft-lg",
               )}
             >
               <h3>
@@ -47,11 +47,16 @@ export default function PlusAccordion({ items }: PlusAccordionProps) {
                   <span
                     className={cn(
                       "flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full transition-all duration-300",
-                      isOpen ? "bg-gold text-forest" : "bg-gold/10 text-gold"
+                      isOpen
+                        ? "bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg"
+                        : "bg-gold/10 text-gold",
                     )}
                   >
                     <Plus
-                      className={cn("h-4 w-4 transition-transform duration-300", isOpen && "rotate-45")}
+                      className={cn(
+                        "h-4 w-4 transition-transform duration-300",
+                        isOpen && "rotate-45",
+                      )}
                       aria-hidden="true"
                     />
                   </span>
@@ -66,7 +71,9 @@ export default function PlusAccordion({ items }: PlusAccordionProps) {
                 aria-labelledby={buttonId}
                 className={cn(
                   "grid transition-all duration-300 ease-in-out",
-                  isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  isOpen
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0",
                 )}
               >
                 <div className="overflow-hidden">

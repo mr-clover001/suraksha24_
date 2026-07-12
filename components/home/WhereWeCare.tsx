@@ -26,7 +26,7 @@ export default function WhereWeCare() {
 
       <div className="relative grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
         <FadeIn>
-          <div className="group relative overflow-hidden rounded-3xl bg-linear-to-br from-forest-light to-forest p-8 text-cream shadow-soft-lg ring-1 ring-inset ring-cream/10 transition-shadow duration-500 hover:shadow-[0_28px_60px_-16px_rgba(0,0,0,0.45)] sm:p-10">
+          <div className="group relative overflow-hidden rounded-3xl bg-linear-to-r from-forest via-forest-light via-60% to-teal p-8 text-cream shadow-soft-lg ring-1 ring-inset ring-cream/10 transition-shadow duration-500 hover:shadow-[0_28px_60px_-16px_rgba(0,0,0,0.45)] sm:p-10">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -top-16 -right-16 h-56 w-56 rounded-full bg-sage-light/10 blur-3xl"
@@ -46,9 +46,9 @@ export default function WhereWeCare() {
                 aria-hidden="true"
                 className="absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-linear-to-b from-cream/25 to-transparent"
               />
-              <MapPin className="relative h-6 w-6 text-gold" aria-hidden="true" />
+              <MapPin className="relative h-6 w-6 text-sage-light" aria-hidden="true" />
             </span>
-            <p className="relative mt-6 text-xs font-semibold uppercase tracking-wide text-gold">
+            <p className="relative mt-6 text-xs font-semibold uppercase tracking-wide text-sage-light">
               Our office
             </p>
             <p className="relative mt-2 font-display text-xl leading-snug text-cream">

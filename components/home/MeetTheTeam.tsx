@@ -4,7 +4,7 @@ import FadeIn from "@/components/ui/FadeIn";
 
 export default function MeetTheTeam() {
   return (
-    <section className="relative overflow-hidden bg-forest py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-linear-to-r from-forest via-forest-light via-60% to-teal py-20 sm:py-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-gold/5 blur-3xl"
@@ -18,7 +18,7 @@ export default function MeetTheTeam() {
         {/* Compact intro heading — the full stacked/watermark treatment below
             needs a wide canvas, so it only appears at the lg breakpoint. */}
         <FadeIn className="mb-12 lg:hidden">
-          <p className="eyebrow mb-3 text-gold/80">Meet the team</p>
+          <p className="eyebrow mb-3 text-sage-light">Meet the team</p>
           <h2 className="font-display text-3xl leading-tight text-cream">
             The people behind every visit
           </h2>

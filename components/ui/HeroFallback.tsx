@@ -18,7 +18,7 @@ export default function HeroFallback({
     <div
       aria-hidden="true"
       className={cn(
-        "relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-forest via-forest-light to-forest",
+        "relative flex items-center justify-center overflow-hidden bg-linear-to-r from-forest via-forest-light via-60% to-teal",
         className,
       )}
     >

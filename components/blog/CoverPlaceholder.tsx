@@ -11,7 +11,7 @@ export default function CoverPlaceholder({ className }: { className?: string }) 
     <div
       aria-hidden="true"
       className={cn(
-        "relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-forest to-forest-light",
+        "relative flex items-center justify-center overflow-hidden bg-linear-to-r from-forest via-forest-light via-60% to-teal",
         className
       )}
     >

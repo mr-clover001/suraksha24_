@@ -37,9 +37,9 @@ export default function BlogPage() {
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-gradient-to-l from-black/65 via-black/60 to-transparent"
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-black/75 via-black/70 to-black/30"
         />
-
+        {/* 
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-sage-light/20 blur-3xl"
@@ -47,18 +47,23 @@ export default function BlogPage() {
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -bottom-32 -left-16 h-96 w-96 rounded-full bg-gold/15 blur-3xl"
-        />
+        /> */}
 
         <div className="relative mx-auto flex max-w-7xl justify-end px-6 sm:px-8">
           <FadeIn>
             <div className="max-w-xl">
-              <p className="eyebrow mb-6">From Suraksha24</p>
+              <p className="eyebrow mb-6 text-sage-light">From Suraksha24</p>
               <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-cream sm:text-5xl">
-                Guidance for families caring from near or far
+                Guidance for{" "}
+                <span className="bg-linear-to-r from-teal via-sage to-sage-light bg-clip-text text-transparent font-bold [text-shadow:0_2px_18px_rgba(0,0,0,0.35)]">
+                  families
+                </span>{" "}
+                caring from near or far
               </h1>
               <p className="mt-7 text-lg leading-relaxed text-cream/90">
                 Practical, calm reading on caring for elderly parents in India —
-                written for every family juggling care alongside everything else.
+                written for every family juggling care alongside everything
+                else.
               </p>
             </div>
           </FadeIn>

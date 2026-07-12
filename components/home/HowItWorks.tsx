@@ -105,7 +105,7 @@ export default function HowItWorks() {
                 className={cn(
                   "group relative flex w-[17rem] flex-shrink-0 items-center gap-4 rounded-2xl border px-4 py-4 text-left transition-all duration-300 lg:w-auto lg:flex-shrink lg:py-4",
                   isActive
-                    ? "border-forest bg-forest shadow-soft-lg"
+                    ? "border-none bg-linear-to-r from-forest via-forest-light via-60% to-teal shadow-soft-lg"
                     : "border-forest/8 bg-surface hover:border-gold/25 hover:bg-sage-light/20 hover:shadow-soft",
                 )}
               >
@@ -113,8 +113,8 @@ export default function HowItWorks() {
                   className={cn(
                     "relative z-10 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-300",
                     isActive
-                      ? "border-gold/40 bg-gold text-cream shadow-[0_12px_28px_rgba(15,118,110,0.24)]"
-                      : "border-forest/10 bg-sage-light/35 text-forest group-hover:border-gold/30 group-hover:bg-gold/15",
+                      ? "border-gold/40 bg-white text-blue shadow-[0_12px_28px_rgba(15,118,110,0.24)]"
+                      : "bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg",
                   )}
                   aria-hidden="true"
                 >
@@ -124,7 +124,7 @@ export default function HowItWorks() {
                   <span
                     className={cn(
                       "block text-[11px] font-semibold uppercase leading-none tracking-wide transition-colors duration-300",
-                      isActive ? "text-gold" : "text-gold/70",
+                      isActive ? "text-sage-light" : "text-gold/70",
                     )}
                   >
                     Step {index + 1}
@@ -151,7 +151,7 @@ export default function HowItWorks() {
           })}
         </div>
 
-        <div className="relative overflow-hidden rounded-3xl bg-forest text-cream shadow-soft-lg">
+        <div className="relative overflow-hidden rounded-3xl bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream shadow-soft-lg">
           <div className="relative z-10 flex min-h-[27rem] flex-col justify-between p-7 sm:p-8 lg:p-10">
             <div
               aria-hidden="true"
@@ -171,14 +171,14 @@ export default function HowItWorks() {
                       aria-hidden="true"
                     />
                   </span>
-                  <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-gold">
+                  <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-sage-light">
                     {activeDetail.label}
                   </p>
                   <h3 className="font-display mt-3 max-w-xl text-3xl leading-tight text-cream sm:text-4xl">
                     {activeStep.title}
                   </h3>
                 </div>
-                <p className="font-display text-5xl leading-none text-gold/50 sm:text-6xl">
+                <p className="font-display text-5xl leading-none text-cream/20 sm:text-6xl">
                   {activeStep.step}
                 </p>
               </div>
@@ -220,7 +220,7 @@ export default function HowItWorks() {
                     />
                   )}
                   {index === active && !autoAdvance && (
-                    <span className="block h-full rounded-full bg-gold" />
+                    <span className="block h-full rounded-full bg-white" />
                   )}
                   {index < active && (
                     <span className="block h-full rounded-full bg-gold/40" />

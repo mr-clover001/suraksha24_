@@ -1,18 +1,20 @@
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary" | "outline-light" | "ghost" | "gold";
+type Variant = "primary" | "secondary" | "outline-light" | "ghost" | "gold" | "white";
 type Size = "md" | "lg";
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-forest text-cream hover:bg-forest-light shadow-soft",
+    "bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 shadow-soft",
   secondary:
     "bg-transparent text-forest border border-forest/25 hover:border-forest/60 hover:bg-forest/5",
   "outline-light":
     "bg-transparent text-cream border border-cream/40 hover:bg-cream/10",
   ghost: "bg-transparent text-forest hover:bg-forest/5",
-  gold: "bg-gold text-cream hover:bg-gold/90 shadow-soft",
+  gold: "bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 shadow-soft",
+  /** Solid cream pill with deep-blue text — for CTAs sitting on the dark blue/teal gradient or a photo hero, where it needs to pop. */
+  white: "bg-cream text-forest hover:bg-cream/90 shadow-soft",
 };
 
 const sizeClasses: Record<Size, string> = {

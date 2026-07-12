@@ -98,9 +98,13 @@ export default function ContactPage() {
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
           <FadeIn>
             <div className="max-w-xl">
-              <p className="eyebrow mb-6">Contact</p>
+              <p className="eyebrow mb-6 text-sage-light">Contact</p>
               <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-cream sm:text-5xl">
-                We&rsquo;re easiest to reach the way that suits you
+                We&rsquo;re easiest to{" "}
+                <span className="bg-linear-to-r from-teal via-sage to-sage-light bg-clip-text text-transparent font-bold [text-shadow:0_2px_18px_rgba(0,0,0,0.35)]">
+                  reach
+                </span>{" "}
+                the way that suits you
               </h1>
               <p className="mt-7 text-lg leading-relaxed text-cream/90">
                 Call, WhatsApp or email us directly, or leave your details and
@@ -108,7 +112,11 @@ export default function ContactPage() {
                 for you.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <Button href={contact.phoneHref} variant="gold" size="lg">
+                <Button
+                  href={contact.phoneHref}
+                  size="lg"
+                  className="group inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-medium tracking-wide shadow-soft transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70"
+                >
                   <Phone className="h-4 w-4" aria-hidden="true" />
                   Call now
                 </Button>
@@ -142,7 +150,7 @@ export default function ContactPage() {
 
         <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
           <FadeIn>
-            <div className="rounded-3xl bg-forest p-8 text-cream shadow-soft-lg sm:p-10 lg:p-11">
+            <div className="rounded-3xl bg-linear-to-r from-forest via-forest-light via-60% to-teal p-8 text-cream shadow-soft-lg sm:p-10 lg:p-11">
               <p className="eyebrow mb-4 text-sage-light">Reach us directly</p>
               <p className="font-display text-2xl leading-snug">
                 Every call is answered by a real member of our care team — no

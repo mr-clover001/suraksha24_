@@ -21,10 +21,16 @@ import {
   X,
   type LucideIcon,
 } from "lucide-react";
+import { Merriweather } from "next/font/google";
 import { contact, nav, services, siteConfig } from "@/config/site";
 import Button from "@/components/ui/Button";
 import SocialLinks from "@/components/layout/SocialLinks";
 import { cn } from "@/lib/cn";
+
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  weight: ["700", "900"],
+});
 
 // Pages whose hero has a full-bleed background image the header can float
 // over (transparent) until the visitor scrolls past it.
@@ -130,7 +136,9 @@ export default function Header() {
       <div
         className={cn(
           "hidden items-center justify-between px-6 py-2 text-xs text-cream/85 transition-colors duration-300 md:flex lg:px-8",
-          isOverlay ? "bg-transparent" : "bg-forest",
+          isOverlay
+            ? "bg-transparent"
+            : "bg-linear-to-r from-forest via-forest-light via-60% to-teal",
         )}
       >
         <div className="flex items-center gap-5">
@@ -197,13 +205,45 @@ export default function Header() {
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/assests/LogoNew1.png"
+            src="/assests/LogoSymbol.png"
             alt={siteConfig.name}
             width={1023}
             height={280}
             priority
             className="h-9 w-auto flex-shrink-0 transition-transform duration-300 group-hover:scale-105 sm:h-12"
           />
+          <div
+            className={cn(
+              merriweather.className,
+              "ml-1 flex items-center whitespace-nowrap",
+            )}
+          >
+            <span
+              className={cn(
+                "text-xl font-bold tracking-wide transition-colors duration-300 sm:text-2xl text-forest-light",
+              )}
+            >
+              sura
+            </span>
+
+            <span
+              className={cn(
+                "text-xl font-bold tracking-wide transition-colors duration-300 sm:text-2xl text-teal",
+              )}
+            >
+              ksha
+            </span>
+
+            <span
+              className={cn(
+                "text-xl font-black uppercase tracking-wide transition-colors duration-300 sm:text-3xl",
+
+                isOverlay ? "text-teal" : "text-teal",
+              )}
+            >
+              24
+            </span>
+          </div>
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
@@ -352,7 +392,7 @@ export default function Header() {
           >
             <MessageCircle className="h-4 w-4" aria-hidden="true" />
           </a>
-          <Button href={contact.phoneHref} variant="gold" size="md">
+          <Button href={contact.phoneHref} variant={"gold"} size="md">
             <Phone className="h-4 w-4" aria-hidden="true" />
             Call
           </Button>

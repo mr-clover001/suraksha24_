@@ -6,7 +6,7 @@ import { contact } from "@/config/site";
 export default function MobileActionBar() {
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 divide-x divide-cream/15 border-t border-cream/10 bg-forest text-cream sm:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 divide-x divide-cream/15 border-t border-cream/10 bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream sm:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <a href={contact.phoneHref} className="flex flex-col items-center justify-center gap-1 py-3 text-xs font-medium">

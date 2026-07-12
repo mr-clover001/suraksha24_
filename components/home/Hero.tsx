@@ -2,73 +2,87 @@ import Image from "next/image";
 import { contact } from "@/config/site";
 import Button from "@/components/ui/Button";
 import FadeIn from "@/components/ui/FadeIn";
-import HeroVisual from "@/components/home/HeroVisual";
+import { cn } from "@/lib/cn";
 
 export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden pt-32 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-24">
+    <section className="relative isolate flex min-h-[92svh] items-center overflow-hidden pt-28 pb-16 sm:min-h-[85vh] sm:pt-32 lg:min-h-[80vh] lg:pt-28">
       <div className="absolute inset-0 -z-20">
+        {/* Desktop & Tablet */}
+
         <Image
           src="/assests/HeroBackground.webp"
           alt="Two hands clasped together — a young hand gently holding an elderly hand"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[30%_center]"
+          className="hidden object-cover object-[30%_center] md:block"
+        />
+
+        {/* Mobile */}
+
+        <Image
+          src="/assests/MobileHeroWallpaper.jpg"
+          alt="Two hands clasped together — a young hand gently holding an elderly hand"
+          fill
+          priority
+          sizes="100vw"
+          className="block object-cover object-center md:hidden"
         />
       </div>
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-black/90 via-black/70 to-black/35"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-black/40 to-black/10"
       />
-      {/* 
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full  blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 -right-16 h-96 w-96 rounded-full blur-3xl"
-      /> */}
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
-        <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+        <div className="max-w-xl lg:mx-auto lg:max-w-2xl text-center">
           <FadeIn>
-            <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:max-w-none lg:text-left">
-              <p className="eyebrow mb-6">Home health care, coordinated</p>
-              <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-cream sm:text-5xl lg:text-[3.4rem]">
-                Protection that never sleeps, care that never stops
-              </h1>
-              <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-cream lg:mx-0">
-                Nurses, physiotherapists, caregivers, ICU-grade equipment and
-                24×7 emergency support all under one roof. Suraksha24 brings
-                background-verified, trained care to your loved ones wherever
-                you are in the world. One call, and it&rsquo;s handled.
+            <p className="eyebrow mb-6 text-sage-light">
+              Home health care, coordinated
+            </p>
+            <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
+              <span className="bg-linear-to-r from-teal via-sage to-sage-light bg-clip-text text-transparent font-bold [text-shadow:0_2px_18px_rgba(0,0,0,0.35)]">
+                Protection
+              </span>{" "}
+              that never sleeps, care that never stops
+            </h1>
+
+            <p className="mt-7 text-lg leading-relaxed text-white/90">
+              {/* Nurses, physiotherapists, caregivers and 24×7 emergency
+              response — coordinated by one dedicated care manager, wherever
+              you are in the world. */}
+              Nurses, physiotherapists, caregivers, ICU-grade equipment and 24×7
+              emergency support all under one roof. Suraksha24 brings
+              background-verified, trained care to your loved ones wherever you
+              are in the world. One call, and it’s handled.
+            </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row lg:justify-center">
+              <Button
+                href="#contact"
+                size="lg"
+                className={cn(
+                  "group inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-medium tracking-wide shadow-soft transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto",
+                  "bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg",
+                )}
+              >
+                Talk to a care advisor
+              </Button>
+              <Button href="#how-it-works" variant="outline-light" size="lg">
+                See how it works
+              </Button>
+            </div>
+            <div className="mt-7 space-y-1.5 text-sm text-cream">
+              <p>
+                <a href={contact.phoneHref} className="hover:text-cream/80">
+                  24/7 Care Line: {contact.phoneDisplay}
+                </a>
               </p>
-              <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
-                <Button href="#contact" variant="gold" size="lg">
-                  Talk to a care advisor
-                </Button>
-                <Button href="#how-it-works" variant="outline-light" size="lg">
-                  See how it works
-                </Button>
-              </div>
-              <div className="mt-7 space-y-1.5 text-sm text-cream">
-                <p>
-                  <a href={contact.phoneHref} className="hover:text-cream/80">
-                    24/7 Care Line: {contact.phoneDisplay}
-                  </a>
-                </p>
-                <p className="text-cream/80">
-                  Licensed &amp; Insured · Trusted by 500+ Families
-                </p>
-              </div>
+              <p className="text-cream/80">
+                Licensed &amp; Insured · Trusted by 500+ Families
+              </p>
             </div>
           </FadeIn>
-
-          {/* <FadeIn delay={150}>
-            <HeroVisual />
-          </FadeIn> */}
         </div>
       </div>
     </section>

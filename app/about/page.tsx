@@ -63,9 +63,13 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
           <FadeIn>
             <div className="max-w-xl">
-              <p className="eyebrow mb-6">Our story</p>
+              <p className="eyebrow mb-6 text-sage-light">Our story</p>
               <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-cream sm:text-5xl">
-                Why Suraksha24 Exists
+                Why{" "}
+                <span className="bg-linear-to-r from-teal via-sage to-sage-light bg-clip-text text-transparent font-bold [text-shadow:0_2px_18px_rgba(0,0,0,0.35)]">
+                  Suraksha24
+                </span>{" "}
+                Exists
               </h1>
               <p className="mt-7 text-lg leading-relaxed text-cream/90">
                 We&rsquo;ve all had that moment — a parent who needs care, and
@@ -74,7 +78,11 @@ export default function AboutPage() {
                 and trust, is exactly where Suraksha24 steps in.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <Button href="/contact" variant="gold" size="lg">
+                <Button
+                  href="/contact"
+                  size="lg"
+                  className="group inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-medium tracking-wide shadow-soft transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70"
+                >
                   Talk to a care advisor
                 </Button>
                 <Button href="/services" variant="outline-light" size="lg">

@@ -83,7 +83,7 @@ export default function ChatBot() {
           open ? "scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0"
         )}
       >
-        <div className="flex items-start justify-between gap-3 bg-forest px-5 py-4 text-cream">
+        <div className="flex items-start justify-between gap-3 bg-linear-to-r from-forest via-forest-light via-60% to-teal px-5 py-4 text-cream">
           <div>
             <p className="font-display text-base leading-tight">Quick answers</p>
             <p className="mt-1 text-xs text-cream/65">

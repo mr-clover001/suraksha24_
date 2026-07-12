@@ -1,4 +1,11 @@
-import { ArrowRight, ClipboardCheck, FileSignature, PhoneCall, Users, type LucideIcon } from "lucide-react";
+import {
+  ArrowRight,
+  ClipboardCheck,
+  FileSignature,
+  PhoneCall,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
 import { partnerProcess } from "@/config/site";
 import Section from "@/components/ui/Section";
 import FadeIn from "@/components/ui/FadeIn";
@@ -27,15 +34,23 @@ export default function PartnerProcess() {
                   {item.step}
                 </span>
 
-                <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-forest text-sage-light shadow-soft">
-                  <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
+                <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg shadow-soft">
+                  <Icon
+                    className="h-5 w-5"
+                    strokeWidth={1.75}
+                    aria-hidden="true"
+                  />
                   <span className="absolute -bottom-2 -right-2 flex h-6 min-w-6 items-center justify-center rounded-full bg-gold px-1.5 text-[11px] font-semibold text-cream ring-4 ring-surface">
                     {index + 1}
                   </span>
                 </div>
 
-                <h3 className="font-display relative mt-6 text-lg text-forest">{item.title}</h3>
-                <p className="relative mt-2.5 text-sm leading-relaxed text-muted">{item.body}</p>
+                <h3 className="font-display relative mt-6 text-lg text-forest">
+                  {item.title}
+                </h3>
+                <p className="relative mt-2.5 text-sm leading-relaxed text-muted">
+                  {item.body}
+                </p>
 
                 {!isLast && (
                   <span

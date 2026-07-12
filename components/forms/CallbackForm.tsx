@@ -1,9 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { Clock3, Globe2, MessageSquareText, Phone, Send, User } from "lucide-react";
+import {
+  Clock3,
+  Globe2,
+  MessageSquareText,
+  Phone,
+  Send,
+  User,
+} from "lucide-react";
 import { bestTimeOptions, countryOptions } from "@/config/site";
 import { cn } from "@/lib/cn";
+import Button from "../ui/Button";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -16,22 +24,28 @@ type CallbackFormProps = {
 const fieldBaseClasses =
   "w-full rounded-2xl border px-4 py-3 text-sm outline-none transition-all focus-visible:outline-2 focus-visible:outline-offset-2";
 
-export default function CallbackForm({ tone = "light", className }: CallbackFormProps) {
+export default function CallbackForm({
+  tone = "light",
+  className,
+}: CallbackFormProps) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
   const isDark = tone === "dark";
-  const labelClasses = cn("mb-1.5 block text-sm font-medium", isDark ? "text-cream/90" : "text-forest/85");
+  const labelClasses = cn(
+    "mb-1.5 block text-sm font-medium",
+    isDark ? "text-cream/90" : "text-forest/85",
+  );
   const iconClasses = cn(
     "pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2",
-    isDark ? "text-cream/40" : "text-forest/35"
+    isDark ? "text-cream/40" : "text-forest/35",
   );
   const fieldClasses = cn(
     fieldBaseClasses,
     "pl-11",
     isDark
       ? "border-cream/25 bg-cream/10 text-cream placeholder:text-cream/40 focus-visible:outline-sage-light hover:border-cream/40"
-      : "border-forest/15 bg-surface text-forest shadow-sm placeholder:text-muted/60 focus-visible:outline-gold hover:border-forest/25"
+      : "border-forest/15 bg-surface text-forest shadow-sm placeholder:text-muted/60 focus-visible:outline-gold hover:border-forest/25",
   );
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -51,14 +65,20 @@ export default function CallbackForm({ tone = "light", className }: CallbackForm
 
       if (!res.ok) {
         const body = await res.json().catch(() => null);
-        throw new Error(body?.error ?? "Something went wrong. Please try again.");
+        throw new Error(
+          body?.error ?? "Something went wrong. Please try again.",
+        );
       }
 
       setStatus("success");
       form.reset();
     } catch (err) {
       setStatus("error");
-      setErrorMessage(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      setErrorMessage(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.",
+      );
     }
   }
 
@@ -67,24 +87,40 @@ export default function CallbackForm({ tone = "light", className }: CallbackForm
       <div
         className={cn(
           "rounded-2xl border p-8 text-center",
-          isDark ? "border-cream/20 bg-cream/10" : "border-forest/10 bg-surface-alt",
-          className
+          isDark
+            ? "border-cream/20 bg-cream/10"
+            : "border-forest/10 bg-surface-alt",
+          className,
         )}
         role="status"
       >
-        <p className={cn("font-display text-xl", isDark ? "text-cream" : "text-forest")}>
+        <p
+          className={cn(
+            "font-display text-xl",
+            isDark ? "text-cream" : "text-forest",
+          )}
+        >
           Thank you — we&rsquo;ve got your details.
         </p>
-        <p className={cn("mt-2 text-sm", isDark ? "text-cream/75" : "text-muted")}>
-          Your dedicated care manager will call you back at a time that works for you.
-          For anything urgent, please call or WhatsApp us directly.
+        <p
+          className={cn(
+            "mt-2 text-sm",
+            isDark ? "text-cream/75" : "text-muted",
+          )}
+        >
+          Your dedicated care manager will call you back at a time that works
+          for you. For anything urgent, please call or WhatsApp us directly.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className={cn("space-y-5", className)} noValidate>
+    <form
+      onSubmit={handleSubmit}
+      className={cn("space-y-5", className)}
+      noValidate
+    >
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className={labelClasses}>
@@ -109,7 +145,13 @@ export default function CallbackForm({ tone = "light", className }: CallbackForm
           </label>
           <div className="relative">
             <Globe2 className={iconClasses} aria-hidden="true" />
-            <select id="country" name="country" required defaultValue="" className={fieldClasses}>
+            <select
+              id="country"
+              name="country"
+              required
+              defaultValue=""
+              className={fieldClasses}
+            >
               <option value="" disabled>
                 Select your country
               </option>
@@ -147,7 +189,13 @@ export default function CallbackForm({ tone = "light", className }: CallbackForm
           </label>
           <div className="relative">
             <Clock3 className={iconClasses} aria-hidden="true" />
-            <select id="bestTime" name="bestTime" required defaultValue="" className={fieldClasses}>
+            <select
+              id="bestTime"
+              name="bestTime"
+              required
+              defaultValue=""
+              className={fieldClasses}
+            >
               <option value="" disabled>
                 Select a time
               </option>
@@ -163,13 +211,16 @@ export default function CallbackForm({ tone = "light", className }: CallbackForm
 
       <div>
         <label htmlFor="message" className={labelClasses}>
-          Message <span className={isDark ? "text-cream/50" : "text-muted/60"}>(optional)</span>
+          Message{" "}
+          <span className={isDark ? "text-cream/50" : "text-muted/60"}>
+            (optional)
+          </span>
         </label>
         <div className="relative">
           <MessageSquareText
             className={cn(
               "pointer-events-none absolute left-4 top-4 h-4 w-4",
-              isDark ? "text-cream/40" : "text-forest/35"
+              isDark ? "text-cream/40" : "text-forest/35",
             )}
             aria-hidden="true"
           />
@@ -184,20 +235,24 @@ export default function CallbackForm({ tone = "light", className }: CallbackForm
       </div>
 
       {status === "error" && (
-        <p role="alert" className={cn("text-sm", isDark ? "text-sage-light" : "text-gold")}>
+        <p
+          role="alert"
+          className={cn("text-sm", isDark ? "text-sage-light" : "text-gold")}
+        >
           {errorMessage}
         </p>
       )}
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <button
+        <Button
           type="submit"
           disabled={status === "submitting"}
+          variant={"white"}
           className={cn(
             "group inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-medium tracking-wide shadow-soft transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto",
-            isDark
-              ? "bg-gold text-cream hover:bg-gold/90 hover:shadow-soft-lg"
-              : "bg-forest text-cream hover:bg-forest-light hover:shadow-soft-lg"
+            // isDark
+            //   ? "bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg"
+            //   : "bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg",
           )}
         >
           {status === "submitting" ? "Sending…" : "Request a callback"}
@@ -205,8 +260,10 @@ export default function CallbackForm({ tone = "light", className }: CallbackForm
             className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             aria-hidden="true"
           />
-        </button>
-        <p className={cn("text-xs", isDark ? "text-cream/50" : "text-muted/60")}>
+        </Button>
+        <p
+          className={cn("text-xs", isDark ? "text-cream/50" : "text-muted/60")}
+        >
           No spam. No obligation. Just a callback.
         </p>
       </div>

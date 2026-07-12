@@ -16,14 +16,14 @@ export default function PostCard({ post, featured = false }: PostCardProps) {
     <article
       className={cn(
         "group flex h-full flex-col overflow-hidden rounded-2xl border border-forest/8 bg-surface shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/25 hover:shadow-soft-lg",
-        featured && "lg:flex-row"
+        featured && "lg:flex-row",
       )}
     >
       <Link
         href={`/blog/${post.slug}`}
         className={cn(
           "relative block h-48 w-full flex-shrink-0 overflow-hidden",
-          featured && "lg:h-auto lg:w-2/5"
+          featured && "lg:h-auto lg:w-2/5",
         )}
       >
         {post.coverImage ? (
@@ -53,8 +53,8 @@ export default function PostCard({ post, featured = false }: PostCardProps) {
             {post.category}
           </span>
           {post.sample && (
-            <span className="rounded-full bg-forest/85 px-3 py-1 text-[10px] font-medium uppercase tracking-wide text-cream shadow-sm backdrop-blur-sm">
-              Sample content
+            <span className="rounded-full bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg px-3 py-1 text-[10px] font-medium uppercase tracking-wide  shadow-sm backdrop-blur-sm">
+              Featured
             </span>
           )}
         </div>
@@ -64,7 +64,7 @@ export default function PostCard({ post, featured = false }: PostCardProps) {
         <h3
           className={cn(
             "font-display leading-snug text-forest",
-            featured ? "text-2xl sm:text-3xl" : "text-xl"
+            featured ? "text-2xl sm:text-3xl" : "text-xl",
           )}
         >
           <Link href={`/blog/${post.slug}`} className="hover:text-forest-light">
@@ -75,7 +75,9 @@ export default function PostCard({ post, featured = false }: PostCardProps) {
         <p
           className={cn(
             "mt-3 text-muted",
-            featured ? "text-base leading-relaxed" : "text-[15px] leading-relaxed line-clamp-3"
+            featured
+              ? "text-base leading-relaxed"
+              : "text-[15px] leading-relaxed line-clamp-3",
           )}
         >
           {post.excerpt}
@@ -85,7 +87,9 @@ export default function PostCard({ post, featured = false }: PostCardProps) {
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted/80">
             {featured && (
               <>
-                <span className="font-medium text-forest/80">{post.author}</span>
+                <span className="font-medium text-forest/80">
+                  {post.author}
+                </span>
                 <span aria-hidden="true">·</span>
               </>
             )}
@@ -96,7 +100,7 @@ export default function PostCard({ post, featured = false }: PostCardProps) {
               {post.readingTime}
             </span>
           </div>
-          <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-gold/30 text-gold transition-all duration-300 group-hover:border-gold group-hover:bg-gold group-hover:text-white">
+          <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg">
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </span>
         </div>

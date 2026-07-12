@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Clock3, Handshake, Send, ShieldCheck, UserRoundCheck } from "lucide-react";
+import {
+  Clock3,
+  Handshake,
+  Send,
+  ShieldCheck,
+  UserRoundCheck,
+} from "lucide-react";
 import { contact, partnerHero, siteConfig } from "@/config/site";
 import { publicFileExists } from "@/lib/publicFileExists";
 import Section from "@/components/ui/Section";
@@ -77,17 +83,31 @@ export default function PartnerPage() {
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
           <FadeIn>
             <div className="max-w-xl">
-              <p className="eyebrow mb-6">{partnerHero.eyebrow}</p>
+              <p className="eyebrow mb-6 text-sage-light">{partnerHero.eyebrow}</p>
               <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-cream sm:text-5xl">
-                {partnerHero.heading}
+                One trusted home-care{" "}
+                <span className="bg-linear-to-r from-teal via-sage to-sage-light bg-clip-text text-transparent font-bold [text-shadow:0_2px_18px_rgba(0,0,0,0.35)]">
+                  partner
+                </span>
+                , for everyone you refer
               </h1>
-              <p className="mt-7 text-lg leading-relaxed text-cream/90">{partnerHero.body}</p>
+              <p className="mt-7 text-lg leading-relaxed text-cream/90">
+                {partnerHero.body}
+              </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <Button href="#partner-inquiry" variant="gold" size="lg">
+                <Button
+                  href="#partner-inquiry"
+                  size="lg"
+                  className="bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg"
+                >
                   <Handshake className="h-4 w-4" aria-hidden="true" />
                   Start a partnership
                 </Button>
-                <Button href="#partnership-types" variant="outline-light" size="lg">
+                <Button
+                  href="#partnership-types"
+                  variant="outline-light"
+                  size="lg"
+                >
                   See partnership types
                 </Button>
               </div>
@@ -118,28 +138,39 @@ export default function PartnerPage() {
 
         <div className="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
           <FadeIn>
-            <div className="rounded-3xl bg-forest p-8 text-cream shadow-soft-lg sm:p-10 lg:p-11">
+            <div className="rounded-3xl bg-linear-to-r from-forest via-forest-light via-60% to-teal p-8 text-cream shadow-soft-lg sm:p-10 lg:p-11">
               <p className="eyebrow mb-4 text-sage-light">Why reach out</p>
               <p className="font-display text-2xl leading-snug">
-                Every partnership starts with a real conversation — not a ticket number.
+                Every partnership starts with a real conversation — not a ticket
+                number.
               </p>
 
               <ul className="mt-9 space-y-5">
                 {inquiryReassurances.map((item) => (
                   <li key={item.title} className="flex items-start gap-3.5">
                     <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-cream/10">
-                      <item.icon className="h-5 w-5 text-sage-light" aria-hidden="true" />
+                      <item.icon
+                        className="h-5 w-5 text-sage-light"
+                        aria-hidden="true"
+                      />
                     </span>
                     <span>
-                      <span className="block font-medium text-cream">{item.title}</span>
-                      <span className="mt-1 block text-sm leading-relaxed text-cream/70">{item.body}</span>
+                      <span className="block font-medium text-cream">
+                        {item.title}
+                      </span>
+                      <span className="mt-1 block text-sm leading-relaxed text-cream/70">
+                        {item.body}
+                      </span>
                     </span>
                   </li>
                 ))}
               </ul>
 
               <p className="mt-9 inline-flex items-center gap-2 rounded-full border border-cream/20 px-4 py-2 text-sm text-cream/90">
-                <span className="h-2 w-2 rounded-full bg-sage-light" aria-hidden="true" />
+                <span
+                  className="h-2 w-2 rounded-full bg-sage-light"
+                  aria-hidden="true"
+                />
                 {contact.availability}
               </p>
             </div>
@@ -157,7 +188,8 @@ export default function PartnerPage() {
                 Tell us about your organization
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted">
-                Our partnerships team will respond within one working day to set up an introductory call.
+                Our partnerships team will respond within one working day to set
+                up an introductory call.
               </p>
               <div className="mt-8 rounded-3xl border border-forest/8 bg-surface p-6 shadow-soft sm:p-8">
                 <PartnerInquiryForm tone="light" />

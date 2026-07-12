@@ -186,8 +186,8 @@ export default function PartnerInquiryForm({ tone = "dark" }: PartnerInquiryForm
           className={cn(
             "group inline-flex w-full items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-medium tracking-wide shadow-soft transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto",
             isDark
-              ? "bg-gold text-cream hover:bg-gold/90 hover:shadow-soft-lg"
-              : "bg-forest text-cream hover:bg-forest-light hover:shadow-soft-lg",
+              ? "bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg"
+              : "bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg",
           )}
         >
           {status === "submitting" ? "Sending…" : "Start the conversation"}

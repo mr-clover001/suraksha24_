@@ -6,7 +6,7 @@ type Tone = "cream" | "surface" | "forest" | "sage";
 const toneClasses: Record<Tone, string> = {
   cream: "bg-cream text-forest",
   surface: "bg-surface-alt text-forest",
-  forest: "bg-linear-to-br from-forest via-forest to-forest-light text-cream",
+  forest: "bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream",
   sage: "bg-sage-light/40 text-forest",
 };
 
@@ -52,7 +52,11 @@ export default function Section({
               headerClassName
             )}
           >
-            {eyebrow && <p className="eyebrow mb-4">{eyebrow}</p>}
+            {eyebrow && (
+              <p className={cn("eyebrow mb-4", tone === "forest" && "text-sage-light")}>
+                {eyebrow}
+              </p>
+            )}
             {heading && (
               <h2 className="font-display text-3xl leading-[1.15] tracking-tight sm:text-4xl lg:text-[2.75rem]">
                 {heading}

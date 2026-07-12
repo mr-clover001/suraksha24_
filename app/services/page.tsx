@@ -45,14 +45,19 @@ export default function ServicesPage() {
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
           <FadeIn>
             <div className="max-w-xl">
-              <p className="eyebrow mb-6">Way We Care</p>
+              <p className="eyebrow mb-6 text-sage-light">Way We Care</p>
               <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-cream sm:text-5xl">
-                Comprehensive care, without the guesswork
+                Comprehensive{" "}
+                <span className="bg-linear-to-r from-teal via-sage to-sage-light bg-clip-text text-transparent font-bold [text-shadow:0_2px_18px_rgba(0,0,0,0.35)]">
+                  care
+                </span>
+                , without the guesswork
               </h1>
               <p className="mt-7 text-lg leading-relaxed text-cream/90">
-                Every service below is coordinated by the same dedicated care manager, so your
-                parents never experience a patchwork of unfamiliar providers — and you never
-                have to manage it from a different timezone. Pick a card to read the full detail.
+                Every service below is coordinated by the same dedicated care
+                manager, so your parents never experience a patchwork of
+                unfamiliar providers — and you never have to manage it from a
+                different timezone. Pick a card to read the full detail.
               </p>
             </div>
           </FadeIn>
@@ -60,7 +65,7 @@ export default function ServicesPage() {
       </section>
 
       <Section tone="cream" className="pt-16 pb-16 sm:pt-20">
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <FadeIn key={service.slug} delay={(index % 4) * 80}>
               <ServiceCard

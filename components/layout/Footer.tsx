@@ -1,17 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Merriweather } from "next/font/google";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import { contact, nav, services, siteConfig } from "@/config/site";
+import { contact, navFooter, services, siteConfig } from "@/config/site";
 import Button from "@/components/ui/Button";
 import BackToTopButton from "@/components/layout/BackToTopButton";
 import SocialLinks from "@/components/layout/SocialLinks";
+import { cn } from "@/lib/cn";
+
+const merriweather = Merriweather({
+  subsets: ["latin"],
+  weight: ["700", "900"],
+});
 
 export default function Footer() {
   const year = new Date().getFullYear();
   const featuredServices = services.slice(0, 5);
 
   return (
-    <footer className="relative overflow-hidden border-t border-cream/10 bg-linear-to-br from-forest via-forest to-forest-light text-cream/80">
+    <footer className="relative overflow-hidden border-t border-cream/10 bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream/80">
       {/* <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-24 right-0 h-80 w-80 rounded-full bg-sage-light/10 blur-3xl"
@@ -32,7 +39,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-shrink-0 gap-3">
-            <Button href={contact.phoneHref} variant="gold" size="md">
+            <Button href={contact.phoneHref} variant="white" size="md">
               <Phone className="h-4 w-4" aria-hidden="true" />
               Call us
             </Button>
@@ -52,12 +59,43 @@ export default function Footer() {
           <div>
             <Link href="/" className="group flex items-center">
               <Image
-                src="/assests/LogoNew1.png"
+                src="/assests/LogoSymbol.png"
                 alt={siteConfig.name}
                 width={1023}
                 height={280}
-                className="h-9 w-auto flex-shrink-0 transition-transform duration-300 group-hover:scale-105 sm:h-14"
+                priority
+                className="h-9 w-auto flex-shrink-0 transition-transform duration-300 group-hover:scale-105 sm:h-12"
               />
+              <div
+                className={cn(
+                  merriweather.className,
+                  "ml-1 flex items-baseline whitespace-nowrap",
+                )}
+              >
+                <span
+                  className={cn(
+                    "text-xl font-bold tracking-wide transition-colors duration-300 sm:text-2xl text-forest-light",
+                  )}
+                >
+                  sura
+                </span>
+
+                <span
+                  className={cn(
+                    "text-xl font-bold tracking-wide transition-colors duration-300 sm:text-2xl text-teal",
+                  )}
+                >
+                  ksha
+                </span>
+
+                <span
+                  className={cn(
+                    "text-xl font-black uppercase tracking-wide transition-colors duration-300 sm:text-3xl text-teal",
+                  )}
+                >
+                  24
+                </span>
+              </div>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/65">
               {siteConfig.tagline}
@@ -78,7 +116,7 @@ export default function Footer() {
           <div>
             <p className="eyebrow mb-5 text-sage-light">Navigate</p>
             <ul className="space-y-3">
-              {nav.map((item) => (
+              {navFooter.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -122,7 +160,7 @@ export default function Footer() {
             <ul className="space-y-3.5 text-sm text-cream/80">
               <li className="flex items-start gap-2.5">
                 <Phone
-                  className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold"
+                  className="mt-0.5 h-4 w-4 flex-shrink-0 text-sage-light"
                   aria-hidden="true"
                 />
                 <a href={contact.phoneHref} className="hover:text-cream">
@@ -131,7 +169,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail
-                  className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold"
+                  className="mt-0.5 h-4 w-4 flex-shrink-0 text-sage-light"
                   aria-hidden="true"
                 />
                 <a
@@ -143,7 +181,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin
-                  className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold"
+                  className="mt-0.5 h-4 w-4 flex-shrink-0 text-sage-light"
                   aria-hidden="true"
                 />
                 <span>{contact.address}</span>

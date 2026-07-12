@@ -45,7 +45,7 @@ export default function ReportingSection() {
           <ul className="mt-8 space-y-4">
             {reportHighlights.map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-forest text-sage-light">
+                <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg">
                   <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" />
                 </span>
                 <span className="text-[15px] leading-relaxed text-forest/90">

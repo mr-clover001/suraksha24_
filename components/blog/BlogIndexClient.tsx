@@ -13,16 +13,23 @@ type BlogIndexClientProps = {
   categories: string[];
 };
 
-export default function BlogIndexClient({ featuredPost, posts, categories }: BlogIndexClientProps) {
+export default function BlogIndexClient({
+  featuredPost,
+  posts,
+  categories,
+}: BlogIndexClientProps) {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return posts.filter((post) => {
-      const matchesCategory = !activeCategory || post.category === activeCategory;
+      const matchesCategory =
+        !activeCategory || post.category === activeCategory;
       const matchesQuery =
-        !q || post.title.toLowerCase().includes(q) || post.excerpt.toLowerCase().includes(q);
+        !q ||
+        post.title.toLowerCase().includes(q) ||
+        post.excerpt.toLowerCase().includes(q);
       return matchesCategory && matchesQuery;
     });
   }, [posts, query, activeCategory]);
@@ -42,8 +49,8 @@ export default function BlogIndexClient({ featuredPost, posts, categories }: Blo
             className={cn(
               "rounded-full border px-4 py-2 text-sm transition-colors",
               activeCategory === null
-                ? "border-forest bg-forest text-cream"
-                : "border-forest/15 bg-surface text-forest/80 hover:border-forest/40"
+                ? "bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg"
+                : "border-forest/15 bg-surface text-forest/80 hover:border-forest/40",
             )}
           >
             All
@@ -57,8 +64,8 @@ export default function BlogIndexClient({ featuredPost, posts, categories }: Blo
               className={cn(
                 "rounded-full border px-4 py-2 text-sm transition-colors",
                 activeCategory === category
-                  ? "border-forest bg-forest text-cream"
-                  : "border-forest/15 bg-surface text-forest/80 hover:border-forest/40"
+                  ? "bg-linear-to-r from-forest via-forest-light via-60% to-teal text-cream hover:brightness-110 hover:shadow-soft-lg"
+                  : "border-forest/15 bg-surface text-forest/80 hover:border-forest/40",
               )}
             >
               {category}

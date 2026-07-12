@@ -1,18 +1,25 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------
- * Suraksha24 design tokens — teal/cyan medical palette.
+ * Suraksha24 design tokens — blue medical palette.
  * Token names are kept stable (forest/sage/gold/cream/etc.) so every
  * component that already reads them re-themes automatically; only the
  * values change here. Edit here (not per-component) to keep the site
  * consistent.
+ *
+ * forest → forest-light → teal is a deep-navy-to-turquoise progression,
+ * meant to be used together as a left-to-right gradient
+ * (`bg-linear-to-r from-forest via-forest-light via-60% to-teal`) on
+ * large background surfaces rather than as flat fills — see components
+ * that read them.
  * ------------------------------------------------------------------- */
 @theme inline {
   --color-cream: #ffffff;
   --color-surface: #ffffff;
   --color-surface-alt: #eaf9f8;
-  --color-forest: #0b3b4a;
-  --color-forest-light: #12546a;
+  --color-forest: #0b3c8a;
+  --color-forest-light: #0e7aaa;
+  --color-teal: #14a89a;
   --color-sage: #14b8a6;
   --color-sage-light: #7ee8d8;
   --color-gold: #0f766e;
@@ -21,8 +28,10 @@
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-inter);
 
-  --shadow-soft: 0 2px 8px rgba(11, 59, 74, 0.07), 0 12px 32px rgba(11, 59, 74, 0.09);
-  --shadow-soft-lg: 0 8px 24px rgba(11, 59, 74, 0.1), 0 24px 56px rgba(11, 59, 74, 0.12);
+  --shadow-soft:
+    0 2px 8px rgba(11, 60, 138, 0.07), 0 12px 32px rgba(11, 60, 138, 0.09);
+  --shadow-soft-lg:
+    0 8px 24px rgba(11, 60, 138, 0.1), 0 24px 56px rgba(11, 60, 138, 0.12);
 }
 
 html {
@@ -43,21 +52,29 @@ body {
   box-shadow: var(--shadow-soft-lg);
 }
 
-/* Letter-spaced uppercase eyebrow label used above headings. */
-.eyebrow {
-  font-family: var(--font-sans);
-  color: var(--color-gold);
-  font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+/* Letter-spaced uppercase eyebrow label used above headings.
+   Wrapped in the `components` layer (lower priority than Tailwind's
+   `utilities` layer) so a `text-*` utility on the same element — e.g.
+   `text-sage-light` for eyebrows on dark backgrounds — always wins over
+   the default gold, regardless of class order in the markup. */
+@layer components {
+  .eyebrow {
+    font-family: var(--font-sans);
+    color: var(--color-gold);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
 }
 
 /* Subtle scroll-in fade used by <FadeIn>. Respects reduced-motion. */
 [data-fade] {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 [data-fade="in"] {
   opacity: 1;
