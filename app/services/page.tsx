@@ -30,16 +30,7 @@ export default function ServicesPage() {
         </div>
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/50 to-black/10"
-        />
-
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full bg-sage-light/20 blur-3xl"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-32 -right-16 h-96 w-96 rounded-full bg-gold/15 blur-3xl"
+          className="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-black/30 to-black/20"
         />
 
         <div className="relative mx-auto max-w-7xl px-6 sm:px-8">

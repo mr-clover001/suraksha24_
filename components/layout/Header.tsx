@@ -220,7 +220,7 @@ export default function Header() {
           >
             <span
               className={cn(
-                "text-xl font-bold tracking-wide transition-colors duration-300 sm:text-2xl text-forest-light",
+                "text-xl text-forest-light font-bold tracking-wide transition-colors duration-300 sm:text-2xl ",
               )}
             >
               sura
@@ -228,7 +228,7 @@ export default function Header() {
 
             <span
               className={cn(
-                "text-xl font-bold tracking-wide transition-colors duration-300 sm:text-2xl text-teal",
+                "text-xl font-bold tracking-wide transition-colors duration-300 sm:text-2xl text-teal-600",
               )}
             >
               ksha
@@ -236,9 +236,9 @@ export default function Header() {
 
             <span
               className={cn(
-                "text-xl font-black uppercase tracking-wide transition-colors duration-300 sm:text-3xl",
+                "text-2xl font-black uppercase tracking-wide transition-colors duration-300 sm:text-3xl",
 
-                isOverlay ? "text-teal" : "text-teal",
+                isOverlay ? "text-teal-600" : "text-teal-600",
               )}
             >
               24

@@ -31,23 +31,11 @@ export default function BlogPage() {
             className="object-cover object-[35%_30%]"
           />
         </div>
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-20 bg-gold/35 mix-blend-color"
-        />
+
         <div
           aria-hidden="true"
           className="absolute inset-0 -z-10 bg-gradient-to-b from-black/75 via-black/70 to-black/30"
         />
-        {/* 
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-sage-light/20 blur-3xl"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-32 -left-16 h-96 w-96 rounded-full bg-gold/15 blur-3xl"
-        /> */}
 
         <div className="relative mx-auto flex max-w-7xl justify-end px-6 sm:px-8">
           <FadeIn>

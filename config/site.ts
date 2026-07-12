@@ -57,13 +57,13 @@ export const navFooter = [
 export const socialLinks = [
   {
     label: "Facebook",
-    href: "https://facebook.com/suraksha24",
+    href: "https://www.facebook.com/share/1DGcg78dhL/",
     icon: "facebook" as const,
     placeholder: true,
   },
   {
     label: "Instagram",
-    href: "https://instagram.com/suraksha24",
+    href: "https://instagram.com/suraksha24_21@",
     icon: "instagram" as const,
     placeholder: true,
   },
@@ -75,7 +75,7 @@ export const socialLinks = [
   },
   {
     label: "YouTube",
-    href: "https://youtube.com/@suraksha24",
+    href: "https://youtube.com/@suraksha24official?si=Wn6duJQUbpt0D6-P",
     icon: "youtube" as const,
     placeholder: true,
   },
@@ -161,6 +161,75 @@ export const services: Service[] = [
   },
   {
     number: "02",
+    slug: "home-icu",
+    title: "Home ICU & Critical Care",
+    summary:
+      "Hospital-grade equipment and round-the-clock critical care at home, with the dignity of familiar surroundings.",
+    description:
+      "Advanced critical care, in the comfort of home. We set up complete ICU-level facilities — ventilators, monitors, trained critical-care nurses — so your parents receive attentive, round-the-clock medical care while surrounded by familiar faces and the dignity of home rather than a hospital ward.",
+    includes: [
+      "Critical care nurses & attendants, round-the-clock",
+      "Ventilator & advanced monitoring support",
+      "Continuous vitals & clinical oversight",
+      "Coordination with treating specialists",
+      "Family briefed clearly at every shift change",
+    ],
+    idealFor: [
+      "A patient discharged from hospital but still needing intensive monitoring",
+      "Ventilator-dependent or critical care that doesn't require a hospital ward",
+      "Families who want critical care with the comfort of familiar surroundings",
+    ],
+  },
+
+  {
+    number: "03",
+
+    slug: "international-patient-services",
+
+    title: "International Patient Services",
+
+    summary:
+      "End-to-end medical travel assistance for patients from Bangladesh seeking trusted treatment in Kolkata, with complete care coordination from arrival to recovery.",
+
+    description:
+      "Suraksha24 specializes in assisting patients from Bangladesh who travel to Kolkata for medical treatment. From hospital appointments and treatment planning to airport pickup, accommodation, language support, and post-treatment follow-up, our dedicated care team ensures a seamless, safe, and stress-free healthcare journey for both patients and their families.",
+
+    includes: [
+      "Doctor & hospital appointment scheduling",
+
+      "Treatment planning and medical care coordination",
+
+      "Airport pickup and drop-off assistance",
+
+      "Hotel and guest house accommodation arrangements",
+
+      "Hospital admission and discharge support",
+
+      "Surgery and diagnostic test coordination",
+
+      "Bengali language interpretation and assistance",
+
+      "Medicine procurement and medical equipment support",
+
+      "Local transportation throughout treatment",
+
+      "Post-treatment follow-up care coordination",
+    ],
+
+    idealFor: [
+      "Patients traveling from Bangladesh for advanced treatment in Kolkata",
+
+      "Families seeking hassle-free medical travel planning",
+
+      "Patients requiring surgery, specialized consultations, or long-term treatment",
+
+      "Individuals needing assistance with hospital admissions and appointments",
+
+      "International patients looking for end-to-end healthcare coordination",
+    ],
+  },
+  {
+    number: "04",
     slug: "companion-care",
     title: "Companion Care & Emotional Wellness",
     summary:
@@ -181,70 +250,7 @@ export const services: Service[] = [
     ],
   },
   {
-    number: "03",
-    slug: "physiotherapy",
-    title: "Physiotherapy & Mobility Rehabilitation",
-    summary:
-      "Personalized, gentle programs at home, respecting each person's pace and goals.",
-    description:
-      "We help your parents regain strength, balance and confidence — one small victory at a time. Our physiotherapists build personalised, gentle programs delivered right at home, respecting each person's pace and goals, and celebrating every milestone along the way.",
-    includes: [
-      "In-home assessment & personalised care plan",
-      "Post-surgical & post-fall rehabilitation",
-      "Mobility, balance & fall-prevention exercises",
-      "Chronic pain & stiffness management",
-      "Progress tracked and shared after every session",
-    ],
-    idealFor: [
-      "Regaining mobility after a fall, fracture or surgery",
-      "Managing stiffness or pain from arthritis or a chronic condition",
-      "Building strength and balance to reduce the risk of future falls",
-    ],
-  },
-  {
-    number: "04",
-    slug: "emergency-response",
-    title: "24×7 Emergency Response — Handled Start to Finish",
-    summary:
-      "Fully-equipped ambulances with trained staff, plus admission and paperwork coordination. One call, help is on the way.",
-    description:
-      "Peace of mind, round the clock. With just one call, a fully-equipped ambulance and trained medical staff are dispatched — day or night — so you're never left feeling helpless from a distance. From there, we coordinate hospital admission and paperwork, and stay on the ground until family arrives.",
-    includes: [
-      "24×7 emergency helpline, always answered",
-      "Fully-equipped ambulance dispatch",
-      "Hospital admission coordination",
-      "Paperwork & documentation handled on your behalf",
-      "On-ground support until family arrives or takes over",
-    ],
-    idealFor: [
-      "Families who want a clear plan in place before an emergency happens, not during one",
-      "A parent living alone with no one nearby who can respond quickly",
-      "Situations needing an ambulance and hospital coordination without delay",
-    ],
-  },
-  {
     number: "05",
-    slug: "home-icu",
-    title: "Home ICU & Critical Care",
-    summary:
-      "Hospital-grade equipment and round-the-clock critical care at home, with the dignity of familiar surroundings.",
-    description:
-      "Advanced critical care, in the comfort of home. We set up complete ICU-level facilities — ventilators, monitors, trained critical-care nurses — so your parents receive attentive, round-the-clock medical care while surrounded by familiar faces and the dignity of home rather than a hospital ward.",
-    includes: [
-      "Critical care nurses & attendants, round-the-clock",
-      "Ventilator & advanced monitoring support",
-      "Continuous vitals & clinical oversight",
-      "Coordination with treating specialists",
-      "Family briefed clearly at every shift change",
-    ],
-    idealFor: [
-      "A patient discharged from hospital but still needing intensive monitoring",
-      "Ventilator-dependent or critical care that doesn't require a hospital ward",
-      "Families who want critical care with the comfort of familiar surroundings",
-    ],
-  },
-  {
-    number: "06",
     slug: "medical-equipment",
     title: "Medical Equipment — Sales, Rentals & Support",
     summary:
@@ -265,30 +271,51 @@ export const services: Service[] = [
     ],
   },
   {
-    number: "07",
-    slug: "diagnostics",
-    title: "Doorstep Diagnostics & Lab Testing",
+    number: "06",
+    slug: "physiotherapy",
+    title: "Physiotherapy & Mobility Rehabilitation",
     summary:
-      "Blood tests, ECGs and diagnostics at home. No travel, no waiting rooms — reports by the next morning.",
+      "Personalized, gentle programs at home, respecting each person's pace and goals.",
     description:
-      "Convenient, stress-free and accurate. Our trained technicians visit your parents at home for blood tests, ECGs and other diagnostics — no travel, no waiting rooms. Reports are usually delivered to your inbox by the next morning.",
+      "We help your parents regain strength, balance and confidence — one small victory at a time. Our physiotherapists build personalised, gentle programs delivered right at home, respecting each person's pace and goals, and celebrating every milestone along the way.",
     includes: [
-      "Blood tests & routine lab panels",
-      "ECG and other at-home diagnostics",
-      "Scheduled visits at a convenient time",
-      "Digital reports shared directly with family",
-      "Follow-up coordination with the care manager",
+      "In-home assessment & personalised care plan",
+      "Post-surgical & post-fall rehabilitation",
+      "Mobility, balance & fall-prevention exercises",
+      "Chronic pain & stiffness management",
+      "Progress tracked and shared after every session",
     ],
     idealFor: [
-      "Routine tests for a parent who finds travel to a clinic difficult",
-      "Regular monitoring panels for an ongoing condition",
-      "Getting quick, reliable results without a waiting room",
+      "Regaining mobility after a fall, fracture or surgery",
+      "Managing stiffness or pain from arthritis or a chronic condition",
+      "Building strength and balance to reduce the risk of future falls",
+    ],
+  },
+  {
+    number: "07",
+    slug: "emergency-response",
+    title: "24×7 Emergency Response — Handled Start to Finish",
+    summary:
+      "Fully-equipped ambulances with trained staff, plus admission and paperwork coordination. One call, help is on the way.",
+    description:
+      "Peace of mind, round the clock. With just one call, a fully-equipped ambulance and trained medical staff are dispatched — day or night — so you're never left feeling helpless from a distance. From there, we coordinate hospital admission and paperwork, and stay on the ground until family arrives.",
+    includes: [
+      "24×7 emergency helpline, always answered",
+      "Fully-equipped ambulance dispatch",
+      "Hospital admission coordination",
+      "Paperwork & documentation handled on your behalf",
+      "On-ground support until family arrives or takes over",
+    ],
+    idealFor: [
+      "Families who want a clear plan in place before an emergency happens, not during one",
+      "A parent living alone with no one nearby who can respond quickly",
+      "Situations needing an ambulance and hospital coordination without delay",
     ],
   },
   {
     number: "08",
-    slug: "diagnostics Copy",
-    title: "Doorstep Diagnostics & Lab Testing Copy",
+    slug: "diagnostics",
+    title: "Doorstep Diagnostics & Lab Testing",
     summary:
       "Blood tests, ECGs and diagnostics at home. No travel, no waiting rooms — reports by the next morning.",
     description:

@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "../public/assets/LogoSymbol.png",
   },
 };
 

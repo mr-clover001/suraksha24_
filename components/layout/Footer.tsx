@@ -74,7 +74,7 @@ export default function Footer() {
               >
                 <span
                   className={cn(
-                    "text-xl font-bold tracking-wide transition-colors duration-300 sm:text-2xl text-forest-light",
+                    "text-xl font-bold tracking-wide transition-colors duration-300 sm:text-2xl text-[#2777f5]",
                   )}
                 >
                   sura
@@ -82,7 +82,7 @@ export default function Footer() {
 
                 <span
                   className={cn(
-                    "text-xl font-bold tracking-wide transition-colors duration-300 sm:text-2xl text-teal",
+                    "text-xl font-bold tracking-wide transition-colors duration-300 sm:text-2xl text-sage-light",
                   )}
                 >
                   ksha
@@ -90,7 +90,7 @@ export default function Footer() {
 
                 <span
                   className={cn(
-                    "text-xl font-black uppercase tracking-wide transition-colors duration-300 sm:text-3xl text-teal",
+                    "text-xl font-black uppercase tracking-wide transition-colors duration-300 sm:text-3xl text-sage-light",
                   )}
                 >
                   24

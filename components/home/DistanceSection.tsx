@@ -5,38 +5,23 @@ import FadeIn from "@/components/ui/FadeIn";
 export default function DistanceSection() {
   return (
     <Section tone="forest" className="relative overflow-hidden">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-24 -left-24 h-80 w-80 rounded-full bg-sage-light/10 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 -right-16 h-96 w-96 rounded-full bg-sage-light/10 blur-3xl"
-      />
+      <div className="relative grid items-center gap-12 lg:grid-cols-2 lg:gap-40">
+        <FadeIn className="relative mx-auto w-full max-w-[560px]">
+          <div className="relative aspect-[1.05/1]">
+            {/* Orange Accent Border */}
 
-      <div className="relative grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <FadeIn className="relative mx-auto w-full max-w-sm lg:max-w-none">
-          <div
-            aria-hidden="true"
-            className="absolute inset-10 rounded-full bg-cream/20 blur-3xl"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 m-auto h-[90%] w-[90%] rounded-full border border-dashed border-cream/20"
-          />
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 m-auto h-[75%] w-[75%] rounded-full border border-dashed border-sage-light/30"
-          />
-          <div className="relative aspect-square">
-            <Image
-              src="/assests/nursing-home-abstract-concept-illustration/Nursing.webp"
-              alt="A caregiver gently assisting an elderly woman seated in a wheelchair outside a care facility"
-              fill
-              sizes="(min-width: 1024px) 40vw, 80vw"
-              className="object-contain"
-              priority={false}
-            />
+            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[40px]  border-[#0D9488] border-b-[10px] border-r-[10px]" />
+
+            {/* Image */}
+
+            <div className="relative z-20 h-full overflow-hidden rounded-[40px] bg-white shadow-2xl">
+              <Image
+                src="/assests/PhotoRealProblem.png"
+                alt=""
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </FadeIn>
 

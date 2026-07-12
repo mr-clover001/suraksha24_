@@ -32,7 +32,7 @@ export default function Hero() {
       </div>
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-black/40 to-black/10"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-black/10 via-black/20 sm:via-black/50 to-black/30"
       />
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
@@ -49,13 +49,13 @@ export default function Hero() {
             </h1>
 
             <p className="mt-7 text-lg leading-relaxed text-white/90">
-              {/* Nurses, physiotherapists, caregivers and 24×7 emergency
-              response — coordinated by one dedicated care manager, wherever
-              you are in the world. */}
-              Nurses, physiotherapists, caregivers, ICU-grade equipment and 24×7
+              Nurses, physiotherapists, caregivers and 24×7 emergency response —
+              coordinated by one dedicated care manager, wherever you are in the
+              world.
+              {/* Nurses, physiotherapists, caregivers, ICU-grade equipment and 24×7
               emergency support all under one roof. Suraksha24 brings
               background-verified, trained care to your loved ones wherever you
-              are in the world. One call, and it’s handled.
+              are in the world. One call, and it’s handled. */}
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row lg:justify-center">
               <Button
