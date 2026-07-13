@@ -8,6 +8,7 @@ import {
   HeartPulse,
   Wrench,
   FlaskConical,
+  Plane,
   type LucideIcon,
 } from "lucide-react";
 import type { Service } from "@/config/site";
@@ -27,6 +28,7 @@ const icons: Record<string, LucideIcon> = {
   "home-icu": HeartPulse,
   "medical-equipment": Wrench,
   diagnostics: FlaskConical,
+  "international-patient-services": Plane,
 };
 
 /** Service card: icon, title, summary and a "Read more" link — used on the home page carousel and /services index. */

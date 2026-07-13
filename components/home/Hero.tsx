@@ -7,48 +7,40 @@ import { cn } from "@/lib/cn";
 export default function Hero() {
   return (
     <section className="relative isolate flex min-h-[92svh] items-center overflow-hidden pt-28 pb-16 sm:min-h-[85vh] sm:pt-32 lg:min-h-[80vh] lg:pt-28">
-      <div className="absolute inset-0 -z-20">
+      <div className="absolute inset-0 -z-20 bg-surface">
         {/* Desktop & Tablet */}
-
         <Image
-          src="/assests/HeroBackground.webp"
-          alt="Two hands clasped together — a young hand gently holding an elderly hand"
+          src="/assests/HeroNewBackground.png"
+          alt="A caregiver checking blood pressure for an elderly woman at home"
           fill
           priority
           sizes="100vw"
-          className="hidden object-cover object-[30%_center] md:block"
+          className="hidden object-cover object-[50%_38%] md:block"
         />
 
         {/* Mobile */}
-
         <Image
-          src="/assests/MobileHeroWallpaper.jpg"
-          alt="Two hands clasped together — a young hand gently holding an elderly hand"
+          src="/assests/Mobile.png"
+          alt="A caregiver checking blood pressure for an elderly woman at home"
           fill
           priority
           sizes="100vw"
-          className="block object-cover object-center md:hidden"
+          className="block object-cover object-[72%_center] md:hidden"
         />
       </div>
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-black/10 via-black/20 sm:via-black/50 to-black/30"
-      />
 
-      <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
-        <div className="max-w-xl lg:mx-auto lg:max-w-2xl text-center">
+      <div className="relative mx-auto w-full max-w-7xl px-6 sm:px-8">
+        <div className="max-w-xl text-left lg:max-w-2xl">
           <FadeIn>
-            <p className="eyebrow mb-6 text-sage-light">
-              Home health care, coordinated
-            </p>
-            <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
-              <span className="bg-linear-to-r from-teal via-sage to-sage-light bg-clip-text text-transparent font-bold [text-shadow:0_2px_18px_rgba(0,0,0,0.35)]">
+            <p className="eyebrow mb-6 ">Home health care, coordinated</p>
+            <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-white md:text-forest  sm:text-5xl  lg:text-[3.4rem]">
+              <span className="bg-linear-to-r from-forest via-forest-light to-teal bg-clip-text text-transparent font-bold">
                 Protection
               </span>{" "}
               that never sleeps, care that never stops
             </h1>
 
-            <p className="mt-7 text-lg leading-relaxed text-white/90">
+            <p className="mt-5 text-lg leading-relaxed text-white md:text-muted  sm:mt-7 ">
               Nurses, physiotherapists, caregivers and 24×7 emergency response —
               coordinated by one dedicated care manager, wherever you are in the
               world.
@@ -57,7 +49,7 @@ export default function Hero() {
               background-verified, trained care to your loved ones wherever you
               are in the world. One call, and it’s handled. */}
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row lg:justify-center">
+            <div className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row">
               <Button
                 href="#contact"
                 size="lg"
@@ -68,17 +60,22 @@ export default function Hero() {
               >
                 Talk to a care advisor
               </Button>
-              <Button href="#how-it-works" variant="outline-light" size="lg">
+              <Button
+                href="#how-it-works"
+                variant="ghost"
+                size="lg"
+                className="border border-white text-white! shadow-lg  transition-all duration-300  md:border-forest/20 md:text-forest!"
+              >
                 See how it works
               </Button>
             </div>
-            <div className="mt-7 space-y-1.5 text-sm text-cream">
+            <div className="mt-5 space-y-1.5 text-sm text-white md:text-forest  sm:mt-7 ">
               <p>
-                <a href={contact.phoneHref} className="hover:text-cream/80">
+                <a href={contact.phoneHref} className="hover:text-teal">
                   24/7 Care Line: {contact.phoneDisplay}
                 </a>
               </p>
-              <p className="text-cream/80">
+              <p className="text-muted text-white md:text-forest">
                 Licensed &amp; Insured · Trusted by 500+ Families
               </p>
             </div>

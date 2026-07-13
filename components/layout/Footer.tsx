@@ -59,7 +59,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="group flex items-center">
               <Image
-                src="/assests/LogoSymbol.png"
+                src="/assests/LOGOS.png"
                 alt={siteConfig.name}
                 width={1023}
                 height={280}

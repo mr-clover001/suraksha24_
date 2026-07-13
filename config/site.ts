@@ -192,28 +192,19 @@ export const services: Service[] = [
       "End-to-end medical travel assistance for patients from Bangladesh seeking trusted treatment in Kolkata, with complete care coordination from arrival to recovery.",
 
     description:
-      "Suraksha24 specializes in assisting patients from Bangladesh who travel to Kolkata for medical treatment. From hospital appointments and treatment planning to airport pickup, accommodation, language support, and post-treatment follow-up, our dedicated care team ensures a seamless, safe, and stress-free healthcare journey for both patients and their families.",
+      "Kolkata has long been a preferred destination for patients from Bangladesh seeking quality healthcare. Our experienced team understands the unique needs of Bangladeshi patients and provides compassionate support throughout their treatment journey while ensuring comfort, convenience, and peace of mind.",
 
     includes: [
-      "Doctor & hospital appointment scheduling",
-
-      "Treatment planning and medical care coordination",
-
-      "Airport pickup and drop-off assistance",
-
-      "Hotel and guest house accommodation arrangements",
-
-      "Hospital admission and discharge support",
-
-      "Surgery and diagnostic test coordination",
-
-      "Bengali language interpretation and assistance",
-
-      "Medicine procurement and medical equipment support",
-
-      "Local transportation throughout treatment",
-
-      "Post-treatment follow-up care coordination",
+      "Doctor & hospital appointments",
+      "Treatment planning & care coordination",
+      "Airport pick-up & drop",
+      "Hotel/guest house arrangements",
+      "Hospital admission & discharge assistance",
+      "Surgery & diagnostic coordination",
+      "Language assistance (where available)",
+      "Pharmacy & medical equipment support",
+      "Local transportation",
+      "Follow-up care coordination",
     ],
 
     idealFor: [

@@ -44,6 +44,11 @@ const OVERLAY_HERO_ROUTES = new Set([
   "/partner",
 ]);
 
+// Routes whose hero image is light-colored, so the floating header needs
+// dark text instead of the cream/white text used over the site's other
+// (dark) hero photos.
+const LIGHT_HERO_ROUTES = new Set(["/"]);
+
 const navIcons: Record<string, LucideIcon> = {
   "/": HomeIcon,
   "/services": Stethoscope,
@@ -70,6 +75,11 @@ export default function Header() {
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const hasImageHero = OVERLAY_HERO_ROUTES.has(pathname);
   const isOverlay = hasImageHero && !scrolled && !open;
+  const heroIsLight = LIGHT_HERO_ROUTES.has(pathname);
+  // While floating over a dark hero photo the header needs light text; over
+  // a light hero (or once scrolled to a solid background) it needs dark text.
+  const overlayNeedsLightText = isOverlay && !heroIsLight;
+  const overlayNeedsDarkText = isOverlay && heroIsLight;
 
   // Close the mobile menu on navigation. Adjusted during render (the
   // pattern React recommends for "reset state when a prop changes")
@@ -135,7 +145,8 @@ export default function Header() {
           pages with no hero to float over). Hidden on mobile to save space. */}
       <div
         className={cn(
-          "hidden items-center justify-between px-6 py-2 text-xs text-cream/85 transition-colors duration-300 md:flex lg:px-8",
+          "hidden items-center justify-between px-6 py-2 text-xs transition-colors duration-300 md:flex lg:px-8",
+          overlayNeedsDarkText ? "text-forest/85" : "text-cream/85",
           isOverlay
             ? "bg-transparent"
             : "bg-linear-to-r from-forest via-forest-light via-60% to-teal",
@@ -205,7 +216,7 @@ export default function Header() {
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/assests/LogoSymbol.png"
+            src="/assests/LOGOS.png"
             alt={siteConfig.name}
             width={1023}
             height={280}
@@ -268,7 +279,7 @@ export default function Header() {
                     onFocus={openServicesMenu}
                     className={cn(
                       "group relative flex items-center gap-1 py-1 text-[13px] font-medium uppercase tracking-wide transition-colors duration-300",
-                      isOverlay
+                      overlayNeedsLightText
                         ? active
                           ? "text-cream"
                           : "text-cream/75 hover:text-cream"
@@ -343,7 +354,7 @@ export default function Header() {
                 aria-current={active ? "page" : undefined}
                 className={cn(
                   "group relative py-1 text-[13px] font-medium uppercase tracking-wide transition-colors duration-300",
-                  isOverlay
+                  overlayNeedsLightText
                     ? active
                       ? "text-cream"
                       : "text-cream/75 hover:text-cream"
@@ -369,7 +380,7 @@ export default function Header() {
           <span
             className={cn(
               "hidden items-center gap-1.5 text-xs transition-colors duration-300 lg:inline-flex",
-              isOverlay ? "text-cream/75" : "text-muted",
+              overlayNeedsLightText ? "text-cream/75" : "text-muted",
             )}
           >
             <span
@@ -385,7 +396,7 @@ export default function Header() {
             aria-label="Chat with Suraksha24 on WhatsApp"
             className={cn(
               "hidden h-10 w-10 items-center justify-center rounded-full border transition-colors duration-300 lg:inline-flex",
-              isOverlay
+              overlayNeedsLightText
                 ? "border-cream/25 text-cream/85 hover:border-cream/45 hover:bg-cream/10 hover:text-cream"
                 : "border-forest/15 text-forest/80 hover:border-forest/40 hover:text-forest",
             )}
@@ -402,7 +413,7 @@ export default function Header() {
           type="button"
           className={cn(
             "inline-flex items-center justify-center rounded-full p-2 transition-colors duration-300 lg:hidden",
-            isOverlay ? "text-cream" : "text-forest",
+            overlayNeedsLightText ? "text-cream" : "text-forest",
           )}
           aria-expanded={open}
           aria-controls="mobile-menu"
