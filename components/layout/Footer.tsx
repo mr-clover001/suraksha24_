@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Merriweather } from "next/font/google";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import { contact, navFooter, services, siteConfig } from "@/config/site";
+import { contact, legalLinks, navFooter, services, siteConfig } from "@/config/site";
 import Button from "@/components/ui/Button";
 import BackToTopButton from "@/components/layout/BackToTopButton";
 import SocialLinks from "@/components/layout/SocialLinks";
@@ -194,6 +194,16 @@ export default function Footer() {
           <p>
             © {year} {siteConfig.name}. All rights reserved.
           </p>
+          <nav
+            aria-label="Legal"
+            className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2"
+          >
+            {legalLinks.map((item) => (
+              <Link key={item.href} href={item.href} className="hover:text-cream/80">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
           <div className="flex items-center gap-6">
             <p>Kolkata, India</p>
             <BackToTopButton />

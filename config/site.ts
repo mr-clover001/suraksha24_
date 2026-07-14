@@ -49,6 +49,12 @@ export const navFooter = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
+/** Legal/policy links — rendered only in the footer's bottom bar, never in primary nav. */
+export const legalLinks = [
+  { label: "Terms & Conditions", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Refund & Cancellation", href: "/refund-cancellation" },
+];
 /**
  * PLACEHOLDER social profile links — swap for the client's real handles
  * before launch. Rendered in the header utility bar and site footer via
