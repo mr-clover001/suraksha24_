@@ -16,6 +16,7 @@ import Section from "@/components/ui/Section";
 import FadeIn from "@/components/ui/FadeIn";
 import Button from "@/components/ui/Button";
 import CallbackForm from "@/components/forms/CallbackForm";
+import MobileHero from "@/components/layout/MobileHero";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -70,59 +71,82 @@ const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(contact.
 export default function ContactPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden pt-32 pb-20 sm:pt-36 sm:pb-24 lg:pt-44 lg:pb-28">
-        <div className="absolute inset-0 -z-20">
-          <Image
-            src="/assests/ContactUs.webp"
-            alt="Close-up of a public telephone keypad and handset, lit warmly against a soft blurred background"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-[72%_62%]"
-          />
-        </div>
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-black/30 to-black/20"
+      <section className="relative isolate overflow-hidden">
+        <MobileHero
+          eyebrow="Contact"
+          heading={
+            <>
+              We&rsquo;re easiest to{" "}
+              <span className="bg-linear-to-r from-forest via-forest-light to-teal bg-clip-text text-transparent font-bold">
+                reach
+              </span>{" "}
+              the way that suits you
+            </>
+          }
+          description="Call, WhatsApp or email us directly, or leave your details and your dedicated care manager will call back at a time that works for you."
+          image={{
+            src: "/assests/ContactUs.webp",
+            alt: "Close-up of a public telephone keypad and handset, lit warmly against a soft blurred background",
+            objectPosition: "object-[72%_62%]",
+          }}
+          ctaHref={contact.phoneHref}
+          ctaLabel="Call now"
         />
 
-        <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
-          <FadeIn>
-            <div className="max-w-xl">
-              <p className="eyebrow mb-6 text-sage-light">Contact</p>
-              <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-cream sm:text-5xl">
-                We&rsquo;re easiest to{" "}
-                <span className="bg-linear-to-r from-teal via-sage to-sage-light bg-clip-text text-transparent font-bold [text-shadow:0_2px_18px_rgba(0,0,0,0.35)]">
-                  reach
-                </span>{" "}
-                the way that suits you
-              </h1>
-              <p className="mt-7 text-lg leading-relaxed text-cream/90">
-                Call, WhatsApp or email us directly, or leave your details and
-                your dedicated care manager will call back at a time that works
-                for you.
-              </p>
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <Button
-                  href={contact.phoneHref}
-                  size="lg"
-                  className="group inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-medium tracking-wide shadow-soft transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70"
-                >
-                  <Phone className="h-4 w-4" aria-hidden="true" />
-                  Call now
-                </Button>
-                <Button
-                  href={contact.whatsappHref}
-                  variant="outline-light"
-                  size="lg"
-                  external
-                >
-                  <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                  WhatsApp us
-                </Button>
+        <div className="relative hidden overflow-hidden pt-32 pb-20 sm:pt-36 sm:pb-24 md:block lg:pt-44 lg:pb-28">
+          <div className="absolute inset-0 -z-20">
+            <Image
+              src="/assests/ContactUs.webp"
+              alt="Close-up of a public telephone keypad and handset, lit warmly against a soft blurred background"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-[72%_62%]"
+            />
+          </div>
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-black/30 to-black/20"
+          />
+
+          <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
+            <FadeIn>
+              <div className="max-w-xl">
+                <p className="eyebrow mb-6 text-sage-light">Contact</p>
+                <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-cream sm:text-5xl">
+                  We&rsquo;re easiest to{" "}
+                  <span className="bg-linear-to-r from-teal via-sage to-sage-light bg-clip-text text-transparent font-bold [text-shadow:0_2px_18px_rgba(0,0,0,0.35)]">
+                    reach
+                  </span>{" "}
+                  the way that suits you
+                </h1>
+                <p className="mt-7 text-lg leading-relaxed text-cream/90">
+                  Call, WhatsApp or email us directly, or leave your details and
+                  your dedicated care manager will call back at a time that works
+                  for you.
+                </p>
+                <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                  <Button
+                    href={contact.phoneHref}
+                    size="lg"
+                    className="group inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-medium tracking-wide shadow-soft transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70"
+                  >
+                    <Phone className="h-4 w-4" aria-hidden="true" />
+                    Call now
+                  </Button>
+                  <Button
+                    href={contact.whatsappHref}
+                    variant="outline-light"
+                    size="lg"
+                    external
+                  >
+                    <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                    WhatsApp us
+                  </Button>
+                </div>
               </div>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

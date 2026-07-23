@@ -17,6 +17,7 @@ import {
   Menu,
   MessageCircle,
   Phone,
+  Plane,
   Stethoscope,
   X,
   type LucideIcon,
@@ -49,9 +50,18 @@ const OVERLAY_HERO_ROUTES = new Set([
 // (dark) hero photos.
 const LIGHT_HERO_ROUTES = new Set(["/"]);
 
+// Routes that render a plain light (bg-surface) mobile hero below md —
+// see components/layout/MobileHero.tsx — while still keeping a dark
+// full-bleed photo hero at md and up. Below md the floating header sits over
+// that light background, so mobile-only chrome (the hamburger button) needs
+// dark text there even though the same route needs light/cream text once
+// the dark desktop photo is showing (md and up, while unscrolled).
+const MOBILE_LIGHT_HERO_ROUTES = new Set(["/about", "/blog", "/contact", "/services"]);
+
 const navIcons: Record<string, LucideIcon> = {
   "/": HomeIcon,
   "/services": Stethoscope,
+  "/international-patients-services": Plane,
   "/blog": BookOpen,
   "/career": Briefcase,
   "/partner": Handshake,
@@ -80,6 +90,15 @@ export default function Header() {
   // a light hero (or once scrolled to a solid background) it needs dark text.
   const overlayNeedsLightText = isOverlay && !heroIsLight;
   const overlayNeedsDarkText = isOverlay && heroIsLight;
+  const hasMobileLightHero = MOBILE_LIGHT_HERO_ROUTES.has(pathname);
+  // The hamburger button is visible below xl, spanning both the light mobile
+  // hero (below md) and the dark desktop-photo hero (md–xl) for these
+  // routes, so its color has to switch at md instead of following
+  // overlayNeedsLightText uniformly.
+  const menuButtonNeedsLightText =
+    overlayNeedsLightText && !hasMobileLightHero;
+  const menuButtonNeedsResponsiveLightText =
+    overlayNeedsLightText && hasMobileLightHero;
 
   // Close the mobile menu on navigation. Adjusted during render (the
   // pattern React recommends for "reset state when a prop changes")
@@ -257,7 +276,7 @@ export default function Header() {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-5 xl:flex" aria-label="Primary">
           {nav.map((item) => {
             const active = isActive(pathname, item.href);
 
@@ -376,19 +395,7 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-5 lg:flex">
-          <span
-            className={cn(
-              "hidden items-center gap-1.5 text-xs transition-colors duration-300 lg:inline-flex",
-              overlayNeedsLightText ? "text-cream/75" : "text-muted",
-            )}
-          >
-            <span
-              className="h-1.5 w-1.5 rounded-full bg-sage"
-              aria-hidden="true"
-            />
-            {contact.availability}
-          </span>
+        <div className="hidden items-center gap-5 xl:flex">
           <a
             href={contact.whatsappHref}
             target="_blank"
@@ -412,8 +419,10 @@ export default function Header() {
         <button
           type="button"
           className={cn(
-            "inline-flex items-center justify-center rounded-full p-2 transition-colors duration-300 lg:hidden",
-            overlayNeedsLightText ? "text-cream" : "text-forest",
+            "inline-flex items-center justify-center rounded-full p-2 transition-colors duration-300 xl:hidden",
+            menuButtonNeedsLightText && "text-cream",
+            menuButtonNeedsResponsiveLightText && "text-forest md:text-cream",
+            !overlayNeedsLightText && "text-forest",
           )}
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -429,7 +438,7 @@ export default function Header() {
         aria-hidden={!open}
         inert={!open}
         className={cn(
-          "grid border-forest/8 bg-cream transition-all duration-300 ease-in-out lg:hidden",
+          "grid border-forest/8 bg-cream transition-all duration-300 ease-in-out xl:hidden",
           open
             ? "grid-rows-[1fr] border-t opacity-100"
             : "grid-rows-[0fr] border-t-0 opacity-0",

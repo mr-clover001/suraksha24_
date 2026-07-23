@@ -28,7 +28,7 @@ export default function PrivacyPage() {
       <P>
         By providing us your information, or by making use of the facilities provided by the website, you
         consent to the collection, storage, processing and transfer of your Personal Information and
-        Non-Personal Information by Aegis Care Advisors Private Limited (&ldquo;Suraksha24&rdquo;,
+        Non-Personal Information by Suraksha24 Pvt Ltd (&ldquo;Suraksha24&rdquo;,
         &ldquo;We&rdquo;, &ldquo;Us&rdquo; or &ldquo;Our&rdquo;) as specified under this Privacy Policy. You
         further agree that such collection, use, storage and transfer shall not cause any loss or wrongful
         gain to you or any other person. This Privacy Policy is a contract between you and Suraksha24 and

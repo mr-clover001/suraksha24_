@@ -17,8 +17,8 @@ export default function TermsPage() {
       <P>
         These Terms of Use (&ldquo;Terms&rdquo;) govern the access and use by you of the technology,
         applications, websites, content, products, and services made available by{" "}
-        <strong className="font-semibold text-forest">Suraksha24</strong> (a brand of Aegis Care Advisors
-        Pvt. Ltd.), collectively also referred to as &ldquo;we&rdquo; or &ldquo;us&rdquo;.
+        <strong className="font-semibold text-forest">Suraksha24 Pvt Ltd</strong> (&ldquo;Suraksha24&rdquo;),
+        collectively also referred to as &ldquo;we&rdquo; or &ldquo;us&rdquo;.
       </P>
 
       <H2>1. About Suraksha24</H2>
@@ -73,7 +73,7 @@ export default function TermsPage() {
       <H2>5. General Payment Terms</H2>
       <P>
         Payment can only be made via cash, payment gateway, or cheque drawn in favour of{" "}
-        <strong className="font-semibold text-forest">Aegis Care Advisors Pvt. Ltd.</strong> You agree to
+        <strong className="font-semibold text-forest">Suraksha24 Pvt Ltd</strong>. You agree to
         make payment as soon as the demand is raised. Suraksha24 reserves the right to cancel an ongoing or
         future appointment if payments are not made on time.
       </P>

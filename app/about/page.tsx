@@ -6,6 +6,7 @@ import Section from "@/components/ui/Section";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import FadeIn from "@/components/ui/FadeIn";
+import MobileHero from "@/components/layout/MobileHero";
 
 export const metadata: Metadata = {
   title: "About",
@@ -35,53 +36,76 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden pt-32 pb-20 sm:pt-36 sm:pb-24 lg:pt-44 lg:pb-28">
-        <div className="absolute inset-0 -z-20">
-          <Image
-            src="/assests/AboutUsBackGround.webp"
-            alt="An adult son stands with a hand on his elderly father's shoulder as they look out through a sunlit window at home"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-[64%_35%]"
-          />
-        </div>
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/30 to-black/20"
+      <section className="relative isolate overflow-hidden">
+        <MobileHero
+          eyebrow="Our story"
+          heading={
+            <>
+              Why{" "}
+              <span className="bg-linear-to-r from-forest via-forest-light to-teal bg-clip-text text-transparent font-bold">
+                Suraksha24
+              </span>{" "}
+              Exists
+            </>
+          }
+          description="We’ve all had that moment — a parent who needs care, and not knowing where to begin. The hospital feels too clinical. Hiring help on your own feels uncertain. That gap, between worry and trust, is exactly where Suraksha24 steps in."
+          image={{
+            src: "/assests/AboutUsBackGround.webp",
+            alt: "An adult son stands with a hand on his elderly father's shoulder as they look out through a sunlit window at home",
+            objectPosition: "object-[64%_35%]",
+          }}
+          ctaHref="/contact"
+          ctaLabel="Talk to a care advisor"
         />
 
-        <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
-          <FadeIn>
-            <div className="max-w-xl">
-              <p className="eyebrow mb-6 text-sage-light">Our story</p>
-              <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-cream sm:text-5xl">
-                Why{" "}
-                <span className="bg-linear-to-r from-teal via-sage to-sage-light bg-clip-text text-transparent font-bold [text-shadow:0_2px_18px_rgba(0,0,0,0.35)]">
-                  Suraksha24
-                </span>{" "}
-                Exists
-              </h1>
-              <p className="mt-7 text-lg leading-relaxed text-cream/90">
-                We&rsquo;ve all had that moment — a parent who needs care, and
-                not knowing where to begin. The hospital feels too clinical.
-                Hiring help on your own feels uncertain. That gap, between worry
-                and trust, is exactly where Suraksha24 steps in.
-              </p>
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <Button
-                  href="/contact"
-                  size="lg"
-                  className="group inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-medium tracking-wide shadow-soft transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70"
-                >
-                  Talk to a care advisor
-                </Button>
-                <Button href="/services" variant="outline-light" size="lg">
-                  See our services
-                </Button>
+        <div className="relative hidden overflow-hidden pt-32 pb-20 sm:pt-36 sm:pb-24 md:block lg:pt-44 lg:pb-28">
+          <div className="absolute inset-0 -z-20">
+            <Image
+              src="/assests/AboutUsBackGround.webp"
+              alt="An adult son stands with a hand on his elderly father's shoulder as they look out through a sunlit window at home"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-[64%_35%]"
+            />
+          </div>
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/30 to-black/20"
+          />
+
+          <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
+            <FadeIn>
+              <div className="max-w-xl">
+                <p className="eyebrow mb-6 text-sage-light">Our story</p>
+                <h1 className="font-display text-4xl leading-[1.1] tracking-tight text-cream sm:text-5xl">
+                  Why{" "}
+                  <span className="bg-linear-to-r from-teal via-sage to-sage-light bg-clip-text text-transparent font-bold [text-shadow:0_2px_18px_rgba(0,0,0,0.35)]">
+                    Suraksha24
+                  </span>{" "}
+                  Exists
+                </h1>
+                <p className="mt-7 text-lg leading-relaxed text-cream/90">
+                  We&rsquo;ve all had that moment — a parent who needs care, and
+                  not knowing where to begin. The hospital feels too clinical.
+                  Hiring help on your own feels uncertain. That gap, between worry
+                  and trust, is exactly where Suraksha24 steps in.
+                </p>
+                <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                  <Button
+                    href="/contact"
+                    size="lg"
+                    className="group inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-medium tracking-wide shadow-soft transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70"
+                  >
+                    Talk to a care advisor
+                  </Button>
+                  <Button href="/services" variant="outline-light" size="lg">
+                    See our services
+                  </Button>
+                </div>
               </div>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

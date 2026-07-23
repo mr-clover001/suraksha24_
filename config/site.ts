@@ -34,6 +34,7 @@ export const contact = {
 export const nav = [
   { label: "Home", href: "/" },
   { label: "Way We Care", href: "/services" },
+  { label: "International Patients Services", href: "/international-patients-services" },
   { label: "Blog", href: "/blog" },
   // { label: "Careers", href: "/career" },
   // { label: "Partners", href: "/partner" },
@@ -43,6 +44,7 @@ export const nav = [
 export const navFooter = [
   { label: "Home", href: "/" },
   { label: "Way We Care", href: "/services" },
+  { label: "International Patients Services", href: "/international-patients-services" },
   { label: "Blog", href: "/blog" },
   { label: "Careers", href: "/career" },
   { label: "Partners", href: "/partner" },
@@ -68,21 +70,15 @@ export const socialLinks = [
     placeholder: true,
   },
   {
-    label: "Instagram",
-    href: "https://instagram.com/suraksha24_21@",
-    icon: "instagram" as const,
-    placeholder: true,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://linkedin.com/company/suraksha24",
-    icon: "linkedin" as const,
-    placeholder: true,
-  },
-  {
     label: "YouTube",
     href: "https://youtube.com/@suraksha24official?si=Wn6duJQUbpt0D6-P",
     icon: "youtube" as const,
+    placeholder: true,
+  },
+  {
+    label: "Instagram",
+    href: "https://instagram.com/suraksha24_21@",
+    icon: "instagram" as const,
     placeholder: true,
   },
 ];
@@ -906,58 +902,193 @@ export const partnerTypeOptions = [
 ];
 
 /**
- * PLACEHOLDER partner network logos for the homepage marquee
- * (components/home/PartnerLogos.tsx) — illustrative names, not real
- * organizations. Replace `name` with the real organization and add a
- * logo file at `public/assests/partners/<slug>.png` (or .svg) before
- * launch; until a logo file exists, that entry renders as a text
- * wordmark chip instead of an image.
+ * Partner network logos for the scrolling marquee
+ * (components/home/PartnerLogos.tsx, reused on /partner). `width`/`height`
+ * are each file's real intrinsic pixel size — passed straight to next/image
+ * so the marquee can render every logo at its true aspect ratio (scaled to
+ * a shared height) instead of stretching or letterboxing it. If a logo file
+ * is ever missing, that entry falls back to a text wordmark chip.
  */
 export type PartnerLogoEntry = {
   slug: string;
   name: string;
   logo: string;
+  width: number;
+  height: number;
 };
 
 export const partnerLogos: PartnerLogoEntry[] = [
   {
-    slug: "northgate-hospital",
-    name: "Northgate Hospital",
-    logo: "/assests/partners/northgate-hospital.png",
+    slug: "apollo-hospitals",
+    name: "Apollo Hospitals",
+    logo: "/assests/partners/apollo-hospitals.jpg",
+    width: 600,
+    height: 600,
   },
   {
-    slug: "silver-oak-diagnostics",
-    name: "Silver Oak Diagnostics",
-    logo: "/assests/partners/silver-oak-diagnostics.png",
+    slug: "manipal-hospitals",
+    name: "Manipal Hospitals",
+    logo: "/assests/partners/manipal-hospitals.jpg",
+    width: 1800,
+    height: 1125,
   },
   {
-    slug: "meridian-health-group",
-    name: "Meridian Health Group",
-    logo: "/assests/partners/meridian-health-group.png",
+    slug: "ck-birla-hospitals-cmri",
+    name: "CK Birla Hospitals, CMRI",
+    logo: "/assests/partners/ck-birla-hospitals-cmri.jpg",
+    width: 2048,
+    height: 2048,
   },
   {
-    slug: "lotus-care-clinic",
-    name: "Lotus Care Clinic",
-    logo: "/assests/partners/lotus-care-clinic.png",
+    slug: "medanta",
+    name: "Medanta",
+    logo: "/assests/partners/medanta.jpg",
+    width: 800,
+    height: 800,
   },
   {
-    slug: "harbourview-medical-center",
-    name: "Harbourview Medical Center",
-    logo: "/assests/partners/harbourview-medical-center.png",
+    slug: "tata-medical-center",
+    name: "Tata Medical Center",
+    logo: "/assests/partners/tata-medical-center.jpg",
+    width: 196,
+    height: 196,
   },
   {
-    slug: "crestwood-wellness",
-    name: "Crestwood Wellness",
-    logo: "/assests/partners/crestwood-wellness.png",
+    slug: "hcg-cancer-centre",
+    name: "HCG Cancer Centre",
+    logo: "/assests/partners/hcg-cancer-centre.jpg",
+    width: 1278,
+    height: 912,
   },
   {
-    slug: "bluewell-diagnostics",
-    name: "Bluewell Diagnostics",
-    logo: "/assests/partners/bluewell-diagnostics.png",
+    slug: "nanavati-max-hospital",
+    name: "Nanavati Max Hospital",
+    logo: "/assests/partners/nanavati-max-hospital.jpg",
+    width: 1080,
+    height: 698,
   },
   {
-    slug: "kingston-multispeciality",
-    name: "Kingston Multispeciality",
-    logo: "/assests/partners/kingston-multispeciality.png",
+    slug: "woodlands-hospital",
+    name: "Woodlands Hospital",
+    logo: "/assests/partners/woodlands-hospital.jpg",
+    width: 1000,
+    height: 1000,
+  },
+  {
+    slug: "charnock-hospitals",
+    name: "Charnock Hospitals",
+    logo: "/assests/partners/charnock-hospitals.jpg",
+    width: 853,
+    height: 853,
+  },
+  {
+    slug: "belle-vue-clinic",
+    name: "Belle Vue Clinic",
+    logo: "/assests/partners/belle-vue-clinic.jpg",
+    width: 300,
+    height: 300,
+  },
+  {
+    slug: "institute-of-neurosciences-kolkata",
+    name: "Institute of Neurosciences, Kolkata",
+    logo: "/assests/partners/institute-of-neurosciences-kolkata.jpg",
+    width: 1600,
+    height: 1600,
+  },
+  {
+    slug: "nkpc-kidney-clinic",
+    name: "NKPC Kidney Clinic",
+    logo: "/assests/partners/nkpc-kidney-clinic.jpg",
+    width: 1000,
+    height: 1000,
+  },
+];
+
+/**
+ * Verified patient testimonials for the International Patient Services page
+ * (components/services/InternationalTestimonials.tsx) — real Bangladeshi
+ * patients/families treated in Kolkata through Suraksha24, with photo.
+ * Quotes are kept in the patients' own words (Bengali) — do not translate.
+ */
+export type PatientTestimonial = {
+  slug: string;
+  name: string;
+  location: string;
+  quote: string;
+  photo: string;
+};
+
+export const internationalPatientTestimonials: PatientTestimonial[] = [
+  {
+    slug: "syed-khalid-saifullah",
+    name: "Syed Khalid Saifullah",
+    location: "Rajshahi",
+    quote:
+      "দীর্ঘদিন ধরে হাঁটুর তীব্র ব্যথায় ভুগছিলাম। বাংলাদেশে চিকিৎসার পরও তেমন উন্নতি হচ্ছিল না। পরে সুরক্ষা২৪-এর মাধ্যমে কলকাতায় এসে অর্থোপেডিক বিশেষজ্ঞের পরামর্শ ও সফল অস্ত্রোপচার করাই। বিমানবন্দর থেকে শুরু করে হাসপাতাল, থাকার ব্যবস্থা, দোভাষী সহায়তা এবং সব ধরনের আনুষ্ঠানিক কাজ তারা খুবই সুন্দরভাবে পরিচালনা করেছে। এখন অনেকটাই স্বাভাবিকভাবে হাঁটতে পারছি। সুরক্ষা২৪-এর পুরো টিমকে আন্তরিক ধন্যবাদ।",
+    photo: "/assests/international-testimonials/01-syed-khalid-saifullah.jpeg",
+  },
+  {
+    slug: "firoj-alam",
+    name: "Firoj Alam",
+    location: "Bogura",
+    quote:
+      "আমার বাবার হার্টের জটিল সমস্যার জন্য দ্রুত অস্ত্রোপচার প্রয়োজন ছিল। বিদেশে চিকিৎসা নিয়ে আমরা খুবই দুশ্চিন্তায় ছিলাম। সুরক্ষা২৪ শুরু থেকেই হাসপাতাল নির্বাচন, ডাক্তার অ্যাপয়েন্টমেন্ট, ভর্তি, চিকিৎসা এবং পরবর্তী ফলো-আপ পর্যন্ত প্রতিটি ধাপে আমাদের পাশে ছিল। তাদের আন্তরিকতা, পেশাদারিত্ব এবং সার্বক্ষণিক সহযোগিতার কারণে পুরো চিকিৎসা প্রক্রিয়া অনেক সহজ হয়েছে। আমরা সত্যিই কৃতজ্ঞ।",
+    photo: "/assests/international-testimonials/02-firoj-alam.jpeg",
+  },
+  {
+    slug: "md-hasan-and-fatema-begum",
+    name: "Md. Hasan & Fatema Begum",
+    location: "Gazipur",
+    quote:
+      "বহু বছর ধরে সন্তান নেওয়ার চেষ্টা করেও সফল হতে পারিনি। পরে পরিচিত একজনের মাধ্যমে সুরক্ষা২৪-এর কথা জানতে পারি। তারা আমাদের উপযুক্ত IVF বিশেষজ্ঞের সঙ্গে যোগাযোগ করিয়ে দেয় এবং পুরো চিকিৎসার প্রতিটি ধাপে সহযোগিতা করে। সবকিছু অত্যন্ত গোপনীয়তা, যত্ন এবং আন্তরিকতার সঙ্গে পরিচালনা করেছে। তাদের সেবায় আমরা সত্যিই সন্তুষ্ট এবং ভবিষ্যতের জন্য আশাবাদী।",
+    photo: "/assests/international-testimonials/03-md-hasan-and-fatema-begum.jpeg",
+  },
+  {
+    slug: "zahirul-islam",
+    name: "Zahirul Islam",
+    location: "Dhaka",
+    quote:
+      "হঠাৎ তীব্র পেটব্যথার কারণে জরুরি ভিত্তিতে গলব্লাডার অপারেশন করাতে হয়। বাংলাদেশ থেকে কলকাতায় এসে কীভাবে সবকিছু হবে, তা নিয়ে খুব চিন্তায় ছিলাম। কিন্তু সুরক্ষা২৪ বিমানবন্দর থেকে হাসপাতাল, ভর্তি, পরীক্ষা-নিরীক্ষা, অপারেশন এবং ছাড়পত্র পর্যন্ত সবকিছু খুব সুন্দরভাবে সমন্বয় করেছে। তাদের দায়িত্বশীল সেবার কারণে আমরা নিশ্চিন্তে চিকিৎসা সম্পন্ন করতে পেরেছি।",
+    photo: "/assests/international-testimonials/04-zahirul-islam.jpeg",
+  },
+  {
+    slug: "aminul-islam",
+    name: "Aminul Islam",
+    location: "Chittagong",
+    quote:
+      "কিডনিতে বড় পাথর ধরা পড়ার পর দ্রুত অস্ত্রোপচারের প্রয়োজন হয়। সুরক্ষা২৪-এর মাধ্যমে কলকাতার অভিজ্ঞ ইউরোলজিস্টের কাছে চিকিৎসা নিই। পুরো চিকিৎসা প্রক্রিয়ায় তারা প্রতিটি বিষয়ে আমাদের সহায়তা করেছে এবং যেকোনো প্রশ্নের দ্রুত উত্তর দিয়েছে। অপারেশন সফল হয়েছে এবং এখন আমি সম্পূর্ণ সুস্থতার পথে। বিদেশে চিকিৎসার জন্য সুরক্ষা২৪ সত্যিই একটি নির্ভরযোগ্য প্রতিষ্ঠান।",
+    photo: "/assests/international-testimonials/05-aminul-islam.jpeg",
+  },
+  {
+    slug: "nusrat-jahan",
+    name: "Nusrat Jahan",
+    location: "Barisal",
+    quote:
+      "পরিবারের একজন সদস্যের ক্যান্সার ধরা পড়ার পর আমরা খুবই মানসিকভাবে ভেঙে পড়েছিলাম। সুরক্ষা২৪ শুধু হাসপাতাল ও চিকিৎসার ব্যবস্থা করেনি, পুরো সময়জুড়ে আমাদের মানসিক সাহস এবং প্রয়োজনীয় দিকনির্দেশনাও দিয়েছে। চিকিৎসার প্রতিটি ধাপে তাদের নিয়মিত যোগাযোগ ও আন্তরিক সহযোগিতা আমাদের অনেক আত্মবিশ্বাস দিয়েছে। তাদের প্রতি আমাদের আন্তরিক কৃতজ্ঞতা।",
+    photo: "/assests/international-testimonials/06-nusrat-jahan.jpeg",
+  },
+  {
+    slug: "rifat-chowdhury",
+    name: "Rifat Chowdhury",
+    location: "Gazipur",
+    quote:
+      "দীর্ঘদিন কোমর ও মেরুদণ্ডের সমস্যায় ভুগছিলাম। সুরক্ষা২৪-এর মাধ্যমে কলকাতার একজন অভিজ্ঞ স্পাইন সার্জনের কাছে চিকিৎসা নিই। অপারেশনের আগে থেকে শুরু করে পরে ফিজিওথেরাপি এবং নিয়মিত ফলো-আপ পর্যন্ত তারা সবসময় পাশে ছিল। তাদের আন্তরিক সেবা ও দায়িত্বশীল ব্যবস্থাপনায় আমি অত্যন্ত সন্তুষ্ট।",
+    photo: "/assests/international-testimonials/07-rifat-chowdhury.jpeg",
+  },
+  {
+    slug: "anisur-rahman",
+    name: "Anisur Rahman",
+    location: "Narayanganj",
+    quote:
+      "প্রথমবার চিকিৎসার জন্য ভারতে আসায় অনেক অজানা ভয় ও দুশ্চিন্তা ছিল। কিন্তু সুরক্ষা২৪-এর টিম পুরো যাত্রাটিকে খুব সহজ ও নিরাপদ করে তুলেছে। ভিসা সংক্রান্ত পরামর্শ, বিমানবন্দর রিসিভ, হাসপাতাল, থাকার ব্যবস্থা, দোভাষী সহায়তা এবং চিকিৎসা-পরবর্তী ফলো-আপ—সবকিছুই অত্যন্ত পেশাদারভাবে সম্পন্ন করেছে। ভবিষ্যতে চিকিৎসার প্রয়োজনে আমি অবশ্যই আবার সুরক্ষা২৪-এর সেবা নেব এবং অন্যদেরও আন্তরিকভাবে সুপারিশ করব।",
+    photo: "/assests/international-testimonials/08-anisur-rahman.jpeg",
+  },
+  {
+    slug: "hossain-mahmud",
+    name: "Hossain Mahmud",
+    location: "Khulna",
+    quote:
+      "আমার মায়ের কিডনিতে পাথর ধরা পড়ার পর আমরা খুব চিন্তায় ছিলাম। বাংলাদেশ থেকে কলকাতায় চিকিৎসার জন্য আসার পুরো প্রক্রিয়ায় Suraksha24 আমাদের দারুণ সহযোগিতা করেছে। ডাক্তারের অ্যাপয়েন্টমেন্ট, হাসপাতালের সব ব্যবস্থা এবং চিকিৎসার সময় সবকিছু খুব সুন্দরভাবে দেখাশোনা করেছে। আল্লাহর রহমতে আমার মায়ের চিকিৎসা সফল হয়েছে, এখন তিনি অনেক ভালো আছেন। Suraksha24-এর পুরো টিমের আন্তরিক সহযোগিতার জন্য আমরা হৃদয় থেকে কৃতজ্ঞ। চিকিৎসার জন্য কলকাতায় আসতে চাইলে আমি অবশ্যই তাদের সেবা নেওয়ার পরামর্শ দেব।",
+    photo: "/assests/international-testimonials/09-hossain-mahmud.jpeg",
   },
 ];

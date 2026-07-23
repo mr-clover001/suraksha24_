@@ -150,7 +150,7 @@ body {
   }
 }
 .animate-marquee {
-  animation: marquee-scroll 34s linear infinite;
+  animation: marquee-scroll 50s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

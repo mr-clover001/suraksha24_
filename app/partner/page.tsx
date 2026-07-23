@@ -18,6 +18,7 @@ import PartnerBenefits from "@/components/partner/PartnerBenefits";
 import PartnershipTypes from "@/components/partner/PartnershipTypes";
 import PartnerProcess from "@/components/partner/PartnerProcess";
 import PartnerInquiryForm from "@/components/forms/PartnerInquiryForm";
+import PartnerLogoMarquee from "@/components/ui/PartnerLogoMarquee";
 
 const inquiryReassurances = [
   {
@@ -108,6 +109,18 @@ export default function PartnerPage() {
           </FadeIn>
         </div>
       </section>
+
+      <Section
+        tone="cream"
+        eyebrow="Our network"
+        heading="Hospitals and clinics we already work with"
+        subheading="A glimpse of the referral network Suraksha24 is trusted to carry care through — your organization could be next."
+        className="py-14 sm:py-16"
+      >
+        <FadeIn>
+          <PartnerLogoMarquee />
+        </FadeIn>
+      </Section>
 
       <PartnerBenefits />
 
